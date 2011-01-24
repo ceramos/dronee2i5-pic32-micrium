@@ -1,0 +1,319 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=D:\Drone\pic32-micrium\Dev\os_tmr.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File001]
+Location=D:\Drone\pic32-micrium\Dev\os_core.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File002]
+Location=D:\Drone\pic32-micrium\Dev\os_flag.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File003]
+Location=D:\Drone\pic32-micrium\Dev\os_mbox.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File004]
+Location=D:\Drone\pic32-micrium\Dev\os_mem.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File005]
+Location=D:\Drone\pic32-micrium\Dev\os_mutex.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File006]
+Location=D:\Drone\pic32-micrium\Dev\os_q.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File007]
+Location=D:\Drone\pic32-micrium\Dev\os_sem.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File008]
+Location=D:\Drone\pic32-micrium\Dev\os_task.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File009]
+Location=D:\Drone\pic32-micrium\Dev\os_time.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File010]
+Location=D:\Drone\pic32-micrium\Dev\os_cpu_a.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={92E15EC6-5E91-4BF4-B5FA-C80AD2601AA7}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=--gdwarf-2
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1 --defsym=__MPLAB_DEBUGGER_PIC32MXSK=1
+[File011]
+Location=D:\Drone\pic32-micrium\Dev\os_cpu_c.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File012]
+Location=D:\Drone\pic32-micrium\Dev\os_dbg.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File013]
+Location=D:\Drone\pic32-micrium\Dev\app.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File014]
+Location=D:\Drone\pic32-micrium\Dev\bsp.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File015]
+Location=D:\Drone\pic32-micrium\Dev\crt0.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={92E15EC6-5E91-4BF4-B5FA-C80AD2601AA7}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=--gdwarf-2
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1 --defsym=__MPLAB_DEBUGGER_PIC32MXSK=1
+[File016]
+Location=D:\Drone\pic32-micrium\Dev\PIC32INTlib.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File017]
+Location=D:\Drone\pic32-micrium\Dev\cpu_a.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={92E15EC6-5E91-4BF4-B5FA-C80AD2601AA7}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=--gdwarf-2
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1 --defsym=__MPLAB_DEBUGGER_PIC32MXSK=1
+[File018]
+Location=D:\Drone\pic32-micrium\Dev\app_hooks.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File019]
+Location=D:\Drone\pic32-micrium\Dev\lib_mem.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File020]
+Location=D:\Drone\pic32-micrium\Dev\lib_str.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={430F471F-7ECB-4852-A80D-DEF9A5C8E751}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-g -I..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -I..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -I..\..\..\..\Source -I..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS -ISource -IPorts\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC -IuC-CPU -IuC-LIB -IMIPS32-4K\MPLAB-PIC32-GCC -ICPU\Microchip\PIC32 -I -I..\EX1_OS
+TraceCmdString=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PIC32MXSK=1
+[File021]
+Location=D:\Drone\pic32-micrium\Dev\bsp_a.o
+Folder=Intermediary
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={92E15EC6-5E91-4BF4-B5FA-C80AD2601AA7}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=--gdwarf-2
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1 --defsym=__MPLAB_DEBUGGER_PIC32MXSK=1
+[File022]
+Location=D:\Drone\pic32-micrium\Dev\EX1_OS.elf
+Folder=Output
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={C68E5105-1196-4333-A0BF-3DC57271E614}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-Map="$(BINDIR_)$(TARGETBASE).map" -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
+TraceCmdString=
+DebugOptions=--defsym=__MPLAB_DEBUG=1 --defsym=__MPLAB_DEBUGGER_PIC32MXSK=1
+[File023]
+Location=D:\Drone\pic32-micrium\Dev\EX1_OS.hex
+Folder=Output
+DeviceName=PIC32MX360F512L
+LanguageToolSuiteID={14495C23-81F8-43F3-8A44-859C583D7760}
+LanguageToolID={C68E5105-1196-4333-A0BF-3DC57271E614}
+LanguageToolLocation=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|Source\os_tmr.c|Source\os_core.c|Source\os_flag.c|Source\os_mbox.c|Source\os_mem.c|Source\os_mutex.c|Source\os_q.c|Source\os_sem.c|Source\os_task.c|Source\os_time.c|Source\os_cpu_a.S|Source\os_cpu_c.c|Source\os_dbg.c|Source\app.c|Source\bsp.c|Source\crt0.S|Source\PIC32INTlib.c|Source\cpu_a.s|Source\app_hooks.c|Source\lib_mem.c|Source\lib_str.c|Source\bsp_a.S||<obj>||<lib>||<lkr>||
+SuiteArgsString=-nostartfiles
+ToolArgsString=-Map="$(BINDIR_)$(TARGETBASE).map" -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
+TraceCmdString=
+DebugOptions=--defsym=__MPLAB_DEBUG=1 --defsym=__MPLAB_DEBUGGER_PIC32MXSK=1
+[TOOL_LOC_STAMPS]
+tool_loc{92E15EC6-5E91-4BF4-B5FA-C80AD2601AA7}=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-as.exe
+tool_loc{430F471F-7ECB-4852-A80D-DEF9A5C8E751}=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-gcc.exe
+tool_loc{C68E5105-1196-4333-A0BF-3DC57271E614}=C:\Microchip Starter Kits\PIC32 Starter Kits\MPLAB C32 Suite\bin\pic32-ld.exe
