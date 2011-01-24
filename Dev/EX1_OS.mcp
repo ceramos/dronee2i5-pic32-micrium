@@ -5,10 +5,10 @@ device=PIC32MX360F512L
 [PATH_INFO]
 BuildDirPolicy=BuildDirIsProjectDir
 dir_src=
-dir_bin=
-dir_tmp=
+dir_bin=output
+dir_tmp=output\tmp
 dir_sin=
-dir_inc=..\EX1_OS;;CPU\Microchip\PIC32;MIPS32-4K\MPLAB-PIC32-GCC;uC-CPU;uC-LIB;Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Source;..\..\..\..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\..\..\..\Source;..\..\EvalBoards\Microchip\Explorer16\PIC32MX360\MPLAB-PIC32-GCC\EX1_OS;..\Ports\MIPS32-4K\Vectored-Interrupt\MPLAB-PIC32-GCC;Header
+dir_inc=Header
 dir_lib=
 dir_lkr=
 [CAT_FILTERS]
