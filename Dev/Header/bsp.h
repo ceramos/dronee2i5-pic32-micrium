@@ -24,6 +24,15 @@
 #define  JTAG_ENABLE                DEF_DISABLED
 #define  LCD_LINE_1                 0x02
 #define  LCD_LINE_2                 0xC0
+	
+#define	 ALL_LED					0
+#define	 GREEN_LED					1
+#define  ORANGE_LED					2
+#define  RED_LED					3
+
+#define  PORT_GREEN_LED				IOPORT_BIT_2
+#define  PORT_ORANGE_LED			IOPORT_BIT_1
+#define  PORT_RED_LED				IOPORT_BIT_0
 
 /*
 *********************************************************************************************************

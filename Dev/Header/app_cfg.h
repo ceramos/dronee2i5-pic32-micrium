@@ -62,6 +62,8 @@
 #define  APP_TASK1_STK_SIZE                 175
 #define  APP_TASK2_STK_SIZE                 175
 
+#define  APP_TASK_GREEN_LED_STK_SIZE        175
+
 #if  uC_PROBE_OS_PLUGIN == DEF_ENABLED
 
 #define  OS_PROBE_TASK_STK_SIZE             175
