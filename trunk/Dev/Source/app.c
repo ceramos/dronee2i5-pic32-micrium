@@ -96,45 +96,27 @@ static  void  AppTaskStart (void *p_arg)
     (void)p_arg;
 
     BSP_InitIO();                                                       /* Initialize BSP functions                                 */
-
+/*
 #if PROBE_COM_METHOD_RS232 == DEF_FALSE
-    UART_Init();                                                        /* Initialize serial port                                   */
-#endif
+  //  UART_Init();                                                        /* Initialize serial port                                   */
+//#endif
 
 #if (OS_TASK_STAT_EN > 0)
     OSStatInit();                                                       /* Determine CPU capacity                                   */
 #endif
-
+/*
 #if (uC_PROBE_OS_PLUGIN > 0) || (uC_PROBE_COM_MODULE > 0)
     AppProbeInit();                                                     /* Initialize uC/Probe modules                              */
-#endif
+//#endif
     
     AppTaskCreate();                                                    /* Create application tasks                                 */
     
     while (OS_TRUE) {                                                   /* Task body, always written as an infinite loop.            */
-        for (j = 0; j < 2; j++) {
-            for (i = 1; i < 9; i++) {
+         /*   for (i = 2; i < 4; i++) {
                 LED_Toggle(i);
-                OSTimeDlyHMSM(0, 0, 0, ADC_GetVal() + 10);
-            }
-            
-            for (i = 0; i < 8; i++) {
-                LED_Toggle(0);
-                OSTimeDlyHMSM(0, 0, 0, ADC_GetVal() + 10);
-            }
-        }
-        
-        for ( ; j > 0; j--) {        
-            for (i = 9; i > 0; --i) {        
-                LED_Toggle(i);
-                OSTimeDlyHMSM(0, 0, 0, ADC_GetVal() + 10);
-            }    
-            
-            for (i = 0; i < 8; i++) {
-                LED_Toggle(0);
-                OSTimeDlyHMSM(0, 0, 0, ADC_GetVal() + 10);
-            }
-        }
+                OSTimeDlyHMSM(0, 0, 1, 0);
+            }*/
+                OSTimeDlyHMSM(0, 0, 1, 0);
     }
 }
 
@@ -167,7 +149,7 @@ static  void  AppTaskCreate (void)
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
                     
 #if OS_TASK_NAME_SIZE > 7
-    OSTaskNameSet(APP_START_TASK1_PRIO, (CPU_CHAR *)"Task 1", &err);
+    OSTaskNameSet(APP_START_TASK1_PRIO, (CPU_CHAR *)"Task Led1", &err);
 #endif
 
     OSTaskCreateExt(AppTask2,                                           /* Create start task 1                                      */
@@ -202,38 +184,13 @@ static  void  AppTaskCreate (void)
 
 void  AppTask1 (void *p_arg)
 {
-    CPU_INT32U  i;
-    CPU_CHAR    tx_num[16];
-    
-    
-    i         =  0;
-    tx_num[0] = 'T';
-    tx_num[1] = 'x';
-    tx_num[2] = ' ';
-    tx_num[3] = '#';
-    
-    while (1) {
-        i++;
-        tx_num[4]  =  i / 1000000000  + '0';
-        tx_num[5]  = (i % 100000000)  / 10000000 + '0';
-        tx_num[6]  = (i % 10000000)   / 1000000  + '0';
-        tx_num[7]  = (i % 1000000)    / 100000   + '0';
-        tx_num[8]  = (i % 100000)     / 10000    + '0';
-        tx_num[9]  = (i % 10000)      / 1000     + '0';
-        tx_num[10] = (i % 1000)       / 100      + '0';
-        tx_num[11] = (i % 100)        / 10       + '0';
-        tx_num[12] =  i % 10          + '0';
-        tx_num[13] = '\r';
-        tx_num[14] = '\n';
-        tx_num[15] = '\0';     
-        
-#if (uC_PROBE_OS_PLUGIN > 0) || (uC_PROBE_COM_MODULE > 0)
-        ProbeCom_TxStr((CPU_CHAR *)&tx_num, 100);
-#else
-        UART_TxStr((CPU_CHAR *)&tx_num);
-#endif
-        OSTimeDlyHMSM(0, 0, 1, 0);
-    }
+
+	  while(1)
+	  {
+                LED_Toggle(GREEN_LED);
+                OSTimeDlyHMSM(0, 0, 1, 0);
+       }
+
 }
 
 /*$PAGE*/
@@ -251,71 +208,11 @@ void  AppTask1 (void *p_arg)
 
 void  AppTask2(void *p_arg)
 {
-    CPU_INT08U   i;
-    CPU_INT08U   j;
-    CPU_INT08U   dir1;
-    CPU_INT08U   dir2;
-    CPU_CHAR     str1[26];
-    CPU_CHAR     str2[25];
-    CPU_CHAR    *tmp_str;
-     
-    i       = 0;
-    j       = 0;
-    dir1    = 0;
-    dir2    = 0;
-    tmp_str = (CPU_CHAR *)"         Micrium         ";
-    
-    while (*tmp_str) {
-        str1[i++] = *tmp_str++;
-    }
-    
-    i       = 0;
-        
-    tmp_str = (CPU_CHAR *)"        uC/OS-II        ";    
-    
-    while (*tmp_str) {
-        str2[i++] = *tmp_str++;
-    }
-    
-    i        = 0;
-    
-    while (1) {
-        if (str1[i] != ' ') {
-            dir1 = 1;
-        }
-        
-        str1[i + 16] = '\0'; 
-        LCD_Disp(LCD_LINE_1, &str1[i]);
-        str1[i + 16] = ' ';
-        
-        if (dir1 == 0) {
-            i++;
-        } else {
-            i--;
-            
-            if (i == 0) {
-                dir1 = 0;
-            }    
-        }      
-        
-        if (str2[j] != ' ') {
-            dir2 = 1;
-        }      
-        
-        str2[j + 16] = '\0';
-        LCD_Disp(LCD_LINE_2, &str2[j]);
-        str2[j + 16] = ' ';
-    
-        if (dir2 == 0) {
-            j++;
-        } else {
-            j--;
-            
-            if (j == 0) {
-                dir2 = 0;
-            }
-        }
-        
-        OSTimeDlyHMSM(0, 0, 0, 300);
-    }
+	  while(1)
+	  {
+                LED_Toggle(ORANGE_LED);
+                OSTimeDlyHMSM(0, 0, 0, 500);
+       }
+
+
 }    

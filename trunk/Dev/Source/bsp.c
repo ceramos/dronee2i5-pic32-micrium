@@ -127,33 +127,17 @@ static  void  ADC_Config    (void) ;
 void  LED_On (CPU_INT08U led)
 {
     switch (led) {
-        case 0:
-             mPORTASetBits((IOPORT_BIT_0 | IOPORT_BIT_1 | IOPORT_BIT_2 | IOPORT_BIT_3 |
-                            IOPORT_BIT_4 | IOPORT_BIT_5 | IOPORT_BIT_6 | IOPORT_BIT_7));
+        case ALL_LED:
+             mPORTDSetBits(PORT_RED_LED | PORT_GREEN_LED | PORT_ORANGE_LED);
              break;
-        case 1:
-             mPORTASetBits(IOPORT_BIT_0);
+        case GREEN_LED:
+             mPORTDSetBits(PORT_RED_LED);
              break;
-        case 2:
-             mPORTASetBits(IOPORT_BIT_1);
+        case ORANGE_LED:
+             mPORTDSetBits(PORT_GREEN_LED);
              break;
-        case 3:
-             mPORTASetBits(IOPORT_BIT_2);
-             break;
-        case 4:
-             mPORTASetBits(IOPORT_BIT_3);
-             break;
-        case 5:
-             mPORTASetBits(IOPORT_BIT_4);
-             break;
-        case 6:
-             mPORTASetBits(IOPORT_BIT_5);
-             break;
-        case 7:
-             mPORTASetBits(IOPORT_BIT_6);
-             break;
-        case 8:
-             mPORTASetBits(IOPORT_BIT_7);
+        case RED_LED:
+             mPORTDSetBits(PORT_ORANGE_LED);
              break;
         default:
              break;
@@ -178,33 +162,17 @@ void  LED_On (CPU_INT08U led)
 void  LED_Off (CPU_INT08U led)
 {
     switch (led) {
-        case 0:
-             mPORTAClearBits((IOPORT_BIT_0 | IOPORT_BIT_1 | IOPORT_BIT_2 | IOPORT_BIT_3 |
-                              IOPORT_BIT_4 | IOPORT_BIT_5 | IOPORT_BIT_6 | IOPORT_BIT_7));
+        case ALL_LED:
+             mPORTDClearBits(PORT_RED_LED | PORT_GREEN_LED | PORT_RED_LED);
              break;
-        case 1:
-             mPORTAClearBits(IOPORT_BIT_0);
+        case GREEN_LED:
+             mPORTDClearBits(PORT_GREEN_LED);
              break;
-        case 2:
-             mPORTAClearBits(IOPORT_BIT_1);
+        case ORANGE_LED:
+             mPORTDClearBits(PORT_ORANGE_LED);
              break;
-        case 3:
-             mPORTAClearBits(IOPORT_BIT_2);
-             break;
-        case 4:
-             mPORTAClearBits(IOPORT_BIT_3);
-             break;
-        case 5:
-             mPORTAClearBits(IOPORT_BIT_4);
-             break;
-        case 6:
-             mPORTAClearBits(IOPORT_BIT_5);
-             break;
-        case 7:
-             mPORTAClearBits(IOPORT_BIT_6);
-             break;
-        case 8:
-             mPORTAClearBits(IOPORT_BIT_7);
+        case RED_LED:
+             mPORTDClearBits(PORT_RED_LED);
              break;
         default:
              break;
@@ -229,33 +197,17 @@ void  LED_Off (CPU_INT08U led)
 void  LED_Toggle (CPU_INT08U led)
 {
     switch (led) {
-        case 0:
-             mPORTAToggleBits((IOPORT_BIT_0 | IOPORT_BIT_1 | IOPORT_BIT_2 | IOPORT_BIT_3 |
-                               IOPORT_BIT_4 | IOPORT_BIT_5 | IOPORT_BIT_6 | IOPORT_BIT_7));
+        case ALL_LED:
+             mPORTDToggleBits(PORT_GREEN_LED | PORT_ORANGE_LED | PORT_RED_LED);
              break;
-        case 1:
-             mPORTAToggleBits(IOPORT_BIT_0);
+        case GREEN_LED:
+             mPORTDToggleBits(PORT_GREEN_LED);
              break;
-        case 2:
-             mPORTAToggleBits(IOPORT_BIT_1);
+        case ORANGE_LED:
+             mPORTDToggleBits(PORT_ORANGE_LED);
              break;
-        case 3:
-             mPORTAToggleBits(IOPORT_BIT_2);
-             break;
-        case 4:
-             mPORTAToggleBits(IOPORT_BIT_3);
-             break;
-        case 5:
-             mPORTAToggleBits(IOPORT_BIT_4);
-             break;
-        case 6:
-             mPORTAToggleBits(IOPORT_BIT_5);
-             break;
-        case 7:
-             mPORTAToggleBits(IOPORT_BIT_6);
-             break;
-        case 8:
-             mPORTAToggleBits(IOPORT_BIT_7);
+        case RED_LED:
+             mPORTDToggleBits(PORT_RED_LED);
              break;
         default:
              break;
@@ -293,8 +245,7 @@ void  LED_Init (void)
 
 static  void  BSP_IO_Init (void)
 {                                                                             /* Each LED pin is set up as an output        */
-    mPORTAOutputConfig((IOPORT_BIT_0 | IOPORT_BIT_1 | IOPORT_BIT_2 | IOPORT_BIT_3 | 
-                        IOPORT_BIT_4 | IOPORT_BIT_5 | IOPORT_BIT_6 | IOPORT_BIT_7));
+    mPORTDOutputConfig(PORT_GREEN_LED | PORT_ORANGE_LED | PORT_RED_LED );
 }
 
 /*
