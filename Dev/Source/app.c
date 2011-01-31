@@ -29,6 +29,8 @@ static  OS_STK       AppTaskGreenLedStk[APP_TASK_GREEN_LED_STK_SIZE];
 static  OS_STK       AppTaskOrangeLedStk[APP_TASK_ORANGE_LED_STK_SIZE];
 static  OS_STK       AppTaskRedLedStk[APP_TASK_RED_LED_STK_SIZE];
 
+/* declaration of flag group */
+OS_FLAG_GRP *flagLeds;
 
 /*
 *********************************************************************************************************
@@ -79,6 +81,11 @@ int  main (void)
 #if OS_TASK_NAME_SIZE > 13
     OSTaskNameSet(APP_TASK_START_PRIO, "Startup", &err);
 #endif
+
+	
+	/* within main programm, between OSInit() and OSStart() */
+	flagLeds = OSFlagCreate(0x0000, &err);
+
 
     OSStart();          //the last function called from main                                                /* Start multitasking (i.e. give control to uC/OS-II)       */
 }
@@ -192,7 +199,7 @@ void  AppTaskRedLed(void *p_arg)
 	  while(DEF_TRUE)
 	  {
                 LED_Toggle(RED_LED);
-                OSTimeDlyHMSM(0, 0, 0, 100);
+                OSTimeDlyHMSM(0, 0, 0, 200);
        }
 }    
 
@@ -218,7 +225,7 @@ void  AppTaskOrangeLed(void *p_arg)
 	  while(DEF_TRUE)
 	  {
                 LED_Toggle(ORANGE_LED);
-                OSTimeDlyHMSM(0, 0, 0, 200);
+                OSTimeDlyHMSM(0, 0, 1, 0);
        }
 }    
 
@@ -242,7 +249,9 @@ void  AppTaskGreenLed(void *p_arg)
 	/* Perform Initializations */
 	  while(DEF_TRUE)
 	  {
-                LED_Toggle(GREEN_LED);
-                OSTimeDlyHMSM(0, 0, 0, 500);
+		INT8U err;
+		OSFlagPend(flagLeds, (1 << 10), OS_FLAG_WAIT_SET_ALL +
+		OS_FLAG_CONSUME, 0, &err);
+            LED_Toggle(GREEN_LED);
        }
 }    
