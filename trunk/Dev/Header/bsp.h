@@ -34,6 +34,10 @@
 #define  PORT_ORANGE_LED			IOPORT_BIT_1
 #define  PORT_RED_LED				IOPORT_BIT_0
 
+#define	 PORT_SW1					IOPORT_BIT_6
+#define	 PORT_SW2					IOPORT_BIT_7
+#define	 PORT_SW3					IOPORT_BIT_13
+
 /*
 *********************************************************************************************************
 *                                             PROTOTYPES

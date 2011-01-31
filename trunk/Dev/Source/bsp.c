@@ -80,6 +80,14 @@
 
 /*
 *********************************************************************************************************
+*                                               EXTERNES
+*********************************************************************************************************
+*/
+extern OS_FLAG_GRP *flagLeds;
+
+
+/*
+*********************************************************************************************************
 *                                               CONSTANTS
 *********************************************************************************************************
 */
@@ -935,8 +943,10 @@ void  BSP_CNHandler (void)
 
     reg_val = PORTD;                                                    /* Read register to clear change notice mismatch condition  */ 
     
-    if ((reg_val & PB0_MASK) == 0) {
-                                                                        /* Insert your application code here                        */                                                                  /* Insert your application code here                        */
+    if ((reg_val & PB0_MASK) == 0)
+	{          
+			INT8U err;
+			OSFlagPost(flagLeds, (1 << 10), OS_FLAG_SET, &err);                                                             /* Insert your application code here                        */                                                                  /* Insert your application code here                        */
     } 
     
     mCNClearIntFlag();
