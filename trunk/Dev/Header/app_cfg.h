@@ -46,6 +46,10 @@
 #define  APP_START_TASK1_PRIO                  5
 #define  APP_START_TASK2_PRIO                  6
 
+#define  APP_TASK_GREEN_LED_PRIO               8
+#define  APP_TASK_ORANGE_LED_PRIO              9
+#define  APP_TASK_RED_LED_PRIO                 10
+
 #if  uC_PROBE_OS_PLUGIN == DEF_ENABLED
 
 #define  OS_PROBE_TASK_PRIO                    7
@@ -63,6 +67,8 @@
 #define  APP_TASK2_STK_SIZE                 175
 
 #define  APP_TASK_GREEN_LED_STK_SIZE        175
+#define  APP_TASK_ORANGE_LED_STK_SIZE       175
+#define  APP_TASK_RED_LED_STK_SIZE        	175
 
 #if  uC_PROBE_OS_PLUGIN == DEF_ENABLED
 
