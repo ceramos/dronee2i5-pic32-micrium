@@ -131,13 +131,13 @@ void  LED_On (CPU_INT08U led)
              mPORTDSetBits(PORT_RED_LED | PORT_GREEN_LED | PORT_ORANGE_LED);
              break;
         case GREEN_LED:
-             mPORTDSetBits(PORT_RED_LED);
-             break;
-        case ORANGE_LED:
              mPORTDSetBits(PORT_GREEN_LED);
              break;
-        case RED_LED:
+        case ORANGE_LED:
              mPORTDSetBits(PORT_ORANGE_LED);
+             break;
+        case RED_LED:
+             mPORTDSetBits(PORT_RED_LED);
              break;
         default:
              break;
@@ -163,7 +163,7 @@ void  LED_Off (CPU_INT08U led)
 {
     switch (led) {
         case ALL_LED:
-             mPORTDClearBits(PORT_RED_LED | PORT_GREEN_LED | PORT_RED_LED);
+             mPORTDClearBits(PORT_RED_LED | PORT_ORANGE_LED | PORT_GREEN_LED);
              break;
         case GREEN_LED:
              mPORTDClearBits(PORT_GREEN_LED);
@@ -228,7 +228,7 @@ void  LED_Toggle (CPU_INT08U led)
 
 void  LED_Init (void) 
 {
-    LED_Off(0);                                                               /* Turn off all of the LEDs                   */
+    LED_Off(ALL_LED);                                                               /* Turn off all of the LEDs                   */
 }
 
 /*
