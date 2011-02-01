@@ -78,13 +78,15 @@
 #define  PB0_IO                   LATDbits.LATD13
 #define  PB0                      PORTDbits.RD13
 
+#define  PB1_MASK                 _PORTD_RD7_MASK
+
 /*
 *********************************************************************************************************
 *                                               EXTERNES
 *********************************************************************************************************
 */
 extern OS_FLAG_GRP *flagLeds;
-
+extern BOOLEAN orangeLedBlinking;
 
 /*
 *********************************************************************************************************
@@ -909,8 +911,10 @@ static  void  PB_IntInit (void)
     CNCON = 0x8000;                                                     /* Enable the change notice module                          */
         
     EnableCN19();                                                       /* Enable change notice pin 19, tied to our push button     */
+    EnableCN16();                                                       /* Enable change notice pin 13, tied to our push button     */
     
     ConfigCNPullups(CN19_PULLUP_ENABLE);                                /* Enable a weak pull-up corresponding to the CN pin        */
+    ConfigCNPullups(CN16_PULLUP_ENABLE);                                /* Enable a weak pull-up corresponding to the CN pin        */
     
     dummy_read = PORTD;                                                 /* Perform a dummy read to clear any mismatch conditions    */
             
@@ -948,6 +952,13 @@ void  BSP_CNHandler (void)
 			INT8U err;
 			OSFlagPost(flagLeds, (1 << 10), OS_FLAG_SET, &err);                                                             /* Insert your application code here                        */                                                                  /* Insert your application code here                        */
     } 
+	else if((reg_val & PB1_MASK) == 0)
+	{
+		if(orangeLedBlinking == OS_TRUE)
+			orangeLedBlinking = OS_FALSE;
+		else
+			orangeLedBlinking = OS_TRUE;
+	}
     
     mCNClearIntFlag();
 }
