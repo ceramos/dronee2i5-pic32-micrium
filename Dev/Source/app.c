@@ -32,6 +32,8 @@ static  OS_STK       AppTaskRedLedStk[APP_TASK_RED_LED_STK_SIZE];
 /* declaration of flag group */
 OS_FLAG_GRP *flagLeds;
 
+BOOLEAN orangeLedBlinking = OS_FALSE;
+
 /*
 *********************************************************************************************************
 *                                            FUNCTION PROTOTYPES
@@ -224,8 +226,9 @@ void  AppTaskOrangeLed(void *p_arg)
 	/* Perform Initializations */
 	  while(DEF_TRUE)
 	  {
+			if(orangeLedBlinking == OS_TRUE)
                 LED_Toggle(ORANGE_LED);
-                OSTimeDlyHMSM(0, 0, 1, 0);
+            OSTimeDlyHMSM(0, 0, 0, 300);
        }
 }    
 
