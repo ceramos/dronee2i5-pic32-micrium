@@ -12,10 +12,13 @@
 * File : APP.C
 *********************************************************************************************************
 */
+
 #include <includes.h>
 #include <TaskGreenLed.h>
 #include <TaskRedLed.h>
 #include <TaskOrangeLed.h>
+//#include <task_cfg.h>
+
 /*
 *********************************************************************************************************
 *                                                VARIABLES
@@ -23,7 +26,6 @@
 */
 
 static  OS_STK       AppTaskStartStk[APP_TASK_START_STK_SIZE];
-
 static  OS_STK       AppTaskUartTransmitStk[APP_TASK_UART_TRANSMIT_STK_SIZE];
 
 /* declaration of flag group */
@@ -179,21 +181,6 @@ static  void  AppTaskCreate (void)
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*$PAGE*/
 /*
