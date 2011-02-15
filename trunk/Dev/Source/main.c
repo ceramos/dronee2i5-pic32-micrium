@@ -200,8 +200,26 @@ void  AppTaskUartTransmit(void *p_arg)
 	/* Perform Initializations */
 	  while(DEF_TRUE)
 	  {
-		
-            OSTimeDlyHMSM(0, 0, 0, 300);
-	
+			UART_TxByte(0x88);
+			UART_TxByte(16);
+			UART_TxByte(0xff^10);
+			UART_TxByte(10);
+			UART_TxByte(22);
+			UART_TxByte(22);
+			UART_TxByte(33);
+			UART_TxByte(44);
+			UART_TxByte(55);
+			UART_TxByte(77);
+			UART_TxByte(66);
+			UART_TxByte(55);
+			UART_TxByte(44);
+			UART_TxByte(22);
+			UART_TxByte(44);
+			UART_TxByte(13);
+			UART_TxByte(40);
+			UART_TxByte(13);
+			UART_TxByte(0xff^16);
+
+            OSTimeDlyHMSM(0, 0, 0, 30);
        }
 }    
