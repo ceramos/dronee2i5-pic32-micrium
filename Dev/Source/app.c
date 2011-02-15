@@ -22,12 +22,12 @@
 */
 
 static  OS_STK       AppTaskStartStk[APP_TASK_START_STK_SIZE];
-static  OS_STK       AppTask1Stk[APP_TASK1_STK_SIZE];
-static  OS_STK       AppTask2Stk[APP_TASK2_STK_SIZE];
 
 static  OS_STK       AppTaskGreenLedStk[APP_TASK_GREEN_LED_STK_SIZE];
 static  OS_STK       AppTaskOrangeLedStk[APP_TASK_ORANGE_LED_STK_SIZE];
 static  OS_STK       AppTaskRedLedStk[APP_TASK_RED_LED_STK_SIZE];
+
+static  OS_STK       AppTaskUartTransmitStk[APP_TASK_UART_TRANSMIT_STK_SIZE];
 
 /* declaration of flag group */
 OS_FLAG_GRP *flagLeds;
@@ -41,13 +41,12 @@ BOOLEAN orangeLedBlinking = OS_FALSE;
 */
 
 static  void        AppTaskStart(void *p_arg);
-static  void        AppTask1(void *p_arg);
-static  void        AppTask2(void *p_arg);
 static  void        AppTaskCreate(void);
 
 static  void        AppTaskGreenLed(void *p_arg);
 static  void        AppTaskOrangeLed(void *p_arg);
 static  void        AppTaskRedLed(void *p_arg);
+static  void		AppTaskUartTransmit(void *p_arg);
 
 /*
 *********************************************************************************************************
@@ -114,10 +113,10 @@ static  void  AppTaskStart (void *p_arg)
     (void)p_arg;
 
     BSP_InitIO();                                                       /* Initialize BSP functions                                 */
-/*
+
 #if PROBE_COM_METHOD_RS232 == DEF_FALSE
-  //  UART_Init();                                                        /* Initialize serial port                                   */
-//#endif
+    UART_Init();                                                        /* Initialize serial port                                   */
+#endif
 
 #if (OS_TASK_STAT_EN > 0)
     OSStatInit();                                                       /* Determine CPU capacity                                   */
@@ -176,6 +175,15 @@ static  void  AppTaskCreate (void)
                     APP_TASK_RED_LED_PRIO);
 
     OSTaskNameSet(APP_TASK_RED_LED_PRIO, (INT8U *)"Red Led", &err);
+
+
+    OSTaskCreate(AppTaskUartTransmit,
+                   (void *)0,
+                   (OS_STK *)&AppTaskUartTransmitStk[APP_TASK_UART_TRANSMIT_STK_SIZE - 1],
+                    APP_TASK_UART_TRANSMIT_PRIO);
+
+    OSTaskNameSet(APP_TASK_UART_TRANSMIT_PRIO, (INT8U *)"Uart Transmit", &err);
+
 
 }
 
@@ -256,5 +264,31 @@ void  AppTaskGreenLed(void *p_arg)
 		OSFlagPend(flagLeds, (1 << 10), OS_FLAG_WAIT_SET_ALL +
 		OS_FLAG_CONSUME, 0, &err);
             LED_Toggle(GREEN_LED);
+       }
+}    
+
+
+
+/*$PAGE*/
+/*
+*********************************************************************************************************
+*                                          Uart Transmit
+*
+* Description : This task sends data to the UART. Wait for data with a messageBox
+*
+* Arguments   : p_arg   is the argument passed to 'AppTask2()' by 'OSTaskCreate()'.
+*
+* Returns     : none
+*********************************************************************************************************
+*/
+
+void  AppTaskUartTransmit(void *p_arg)
+{
+	/* Perform Initializations */
+	  while(DEF_TRUE)
+	  {
+		
+            OSTimeDlyHMSM(0, 0, 0, 300);
+	
        }
 }    

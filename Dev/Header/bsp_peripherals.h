@@ -38,7 +38,7 @@
 *********************************************************************************************************
 */
 
-#define  BSP_BAUD_RATE  57600
+#define  BSP_BAUD_RATE  115200
 
 #if  PROBE_COM_METHOD_RS232 == DEF_TRUE
 #define  BSP_UART       BSP_UART1

@@ -43,12 +43,12 @@
 
 #define  OS_TASK_TMR_PRIO                      0
 #define  APP_TASK_START_PRIO                   4
-#define  APP_START_TASK1_PRIO                  5
-#define  APP_START_TASK2_PRIO                  6
 
 #define  APP_TASK_GREEN_LED_PRIO               8
 #define  APP_TASK_ORANGE_LED_PRIO              9
 #define  APP_TASK_RED_LED_PRIO                 10
+
+#define  APP_TASK_UART_TRANSMIT_PRIO           20
 
 #if  uC_PROBE_OS_PLUGIN == DEF_ENABLED
 
@@ -63,12 +63,12 @@
 */
 
 #define  APP_TASK_START_STK_SIZE            175
-#define  APP_TASK1_STK_SIZE                 175
-#define  APP_TASK2_STK_SIZE                 175
 
 #define  APP_TASK_GREEN_LED_STK_SIZE        175
 #define  APP_TASK_ORANGE_LED_STK_SIZE       175
 #define  APP_TASK_RED_LED_STK_SIZE        	175
+
+#define  APP_TASK_UART_TRANSMIT_STK_SIZE    175
 
 #if  uC_PROBE_OS_PLUGIN == DEF_ENABLED
 
