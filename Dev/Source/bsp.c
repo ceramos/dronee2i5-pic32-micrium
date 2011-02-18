@@ -19,6 +19,7 @@
 #include "uart.h"
 #include "adc10.h"
 #include <global.h>
+#include <TaskAcq.h>
 
 /*
 *********************************************************************************************************
@@ -114,6 +115,8 @@ static  void  LCD_Write     (CPU_INT08U w_type, CPU_CHAR val);
 static  void  PB_IntInit    (void);
 static  void  PB_Config     (void);
 static  void  PB_Init       (void);
+
+
 
 static  void  ADC_Init      (void);
 static  void  ADC_TmrInit   (void);
@@ -342,6 +345,27 @@ void  OSProbe_TmrInit (void)
 INT32U  OSProbe_TmrRd (void)
 {
     return  (ReadTimer1());
+}
+
+/*
+*********************************************************************************************************
+*                                    BSP_TIMER1Handler()
+*
+* Description: This function handles interrupts from the UART.
+*
+* Arguments  : None
+*
+* Returns    : None
+*********************************************************************************************************
+*/
+
+void  BSP_TIMER1Handler (void)
+{
+	INT8U err;
+
+	OSFlagPost(drone.acq.start_acq, (1 << 10), OS_FLAG_SET, &err);
+	//LED_Toggle(ORANGE_LED);
+	mT1ClearIntFlag();	
 }
 
 /*
@@ -701,6 +725,35 @@ static  void  LCD_Init (void)
 
 /*
 *********************************************************************************************************
+*                                       TIMER1_Init()
+*
+* Description: This function performs the initialization for the ADC.
+*
+* Arguments  : None
+*
+* Returns    : None
+*********************************************************************************************************
+*/
+
+void  TIMER1_Init (void)
+{
+	mPORTDSetPinsDigitalOut(IOPORT_BIT_3);
+	mPORTDClearBits(IOPORT_BIT_3);
+	// STEP 2. configure Timer 1 using internal clock, 1:256 prescale
+    OpenTimer1(T1_ON | T1_SOURCE_INT | T1_PS_1_256, 282);
+
+    // set up the timer interrupt with a priority of 2
+    ConfigIntTimer1(T1_INT_ON | T1_INT_PRIOR_2);
+		// configure PORTD.RD3 = output
+    
+    
+//ADC_Config();                                                       /* Configure ADC settings                           */
+  //  ADC_IntInit();                                                      /* Configure the interrupt settings                 */
+    //ADC_TmrInit();                                                      /* Initialize the timer used for the ADC            */
+    //EnableADC10();                                                      /* Enable the ADC                                   */
+}
+/*
+*********************************************************************************************************
 *                                       ADC_Init()
 *
 * Description: This function performs the initialization for the ADC.
@@ -1054,4 +1107,5 @@ void  BSP_InitIO (void)
     LCD_Init();                                                         /* Initialize the LCD                               */
     PB_Init();                                                          /* Initialize the push buttons                      */
     ADC_Init();
+	//TIMER1_Init();
 }
