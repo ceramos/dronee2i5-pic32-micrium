@@ -44,6 +44,8 @@
 #define  OS_TASK_TMR_PRIO                      0
 #define  APP_TASK_START_PRIO                   4
 
+#define APP_TASK_ACQ_PRIO						5
+
 #define  APP_TASK_GREEN_LED_PRIO               8
 #define  APP_TASK_ORANGE_LED_PRIO              9
 #define  APP_TASK_RED_LED_PRIO                 10

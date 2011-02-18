@@ -17,7 +17,8 @@
 #include <TaskGreenLed.h>
 #include <TaskRedLed.h>
 #include <TaskOrangeLed.h>
-//#include <task_cfg.h>
+#include <TaskAcq.h>
+#include <global.h>
 
 /*
 *********************************************************************************************************
@@ -144,7 +145,7 @@ static  void  AppTaskStart (void *p_arg)
 static  void  AppTaskCreate (void)
 {
     CPU_INT08U  err;
-   
+   /*
     OSTaskCreateExt(AppTaskGreenLed,
                    (void *)0,
                    (OS_STK *)&AppTaskGreenLedStk[APP_TASK_GREEN_LED_STK_SIZE - 1],
@@ -163,7 +164,7 @@ static  void  AppTaskCreate (void)
                     APP_TASK_ORANGE_LED_PRIO);
 
     OSTaskNameSet(APP_TASK_ORANGE_LED_PRIO, (INT8U *)"Orange Led", &err);
-
+	*/
     OSTaskCreate(AppTaskRedLed,
                    (void *)0,
                    (OS_STK *)&AppTaskRedLedStk[APP_TASK_RED_LED_STK_SIZE - 1],
@@ -171,15 +172,15 @@ static  void  AppTaskCreate (void)
 
     OSTaskNameSet(APP_TASK_RED_LED_PRIO, (INT8U *)"Red Led", &err);
 
-
+	/*
     OSTaskCreate(AppTaskUartTransmit,
                    (void *)0,
                    (OS_STK *)&AppTaskUartTransmitStk[APP_TASK_UART_TRANSMIT_STK_SIZE - 1],
                     APP_TASK_UART_TRANSMIT_PRIO);
 
     OSTaskNameSet(APP_TASK_UART_TRANSMIT_PRIO, (INT8U *)"Uart Transmit", &err);
-
-
+	*/
+	create_acqtask();
 }
 
 /*$PAGE*/
@@ -223,3 +224,5 @@ void  AppTaskUartTransmit(void *p_arg)
             OSTimeDlyHMSM(0, 0, 0, 30);
        }
 }    
+
+
