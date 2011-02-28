@@ -18,8 +18,7 @@
 #include "timer.h"
 #include "uart.h"
 #include "adc10.h"
-#include <global.h>
-#include <TaskAcq.h>
+#include <drone.h>
 
 /*
 *********************************************************************************************************
@@ -767,8 +766,8 @@ void  TIMER1_Init (void)
 static  void  ADC_Init (void)
 {
     ADC_Config();                                                       /* Configure ADC settings                           */
-    ADC_IntInit();                                                      /* Configure the interrupt settings                 */
-    ADC_TmrInit();                                                      /* Initialize the timer used for the ADC            */
+    //ADC_IntInit();                                                      /* Configure the interrupt settings                 */
+    //ADC_TmrInit();                                                      /* Initialize the timer used for the ADC            */
     EnableADC10();                                                      /* Enable the ADC                                   */
 }
 
@@ -800,18 +799,18 @@ static  void  ADC_Config (void)
     config1 = ADC_MODULE_ON
             | ADC_IDLE_STOP
             | ADC_FORMAT_INTG
-            | ADC_CLK_TMR
+            | ADC_CLK_AUTO
             | ADC_AUTO_SAMPLING_ON
-            | ADC_SAMP_ON;
+            | ADC_SAMP_ON;	//ADC_CLK_TMR
             
     config2 = ADC_VREF_AVDD_AVSS
             | ADC_OFFSET_CAL_DISABLE
             | ADC_SCAN_OFF
             | ADC_SAMPLES_PER_INT_16
             | ADC_ALT_BUF_ON
-            | ADC_ALT_INPUT_ON;
+            | ADC_ALT_INPUT_OFF;//ADC_ALT_INPUT_ON
     
-    config3 = ADC_SAMPLE_TIME_0
+    config3 = ADC_SAMPLE_TIME_15
             | ADC_CONV_CLK_INTERNAL_RC
             | ADC_CONV_CLK_Tcy2;
            
@@ -839,7 +838,7 @@ static  void  ADC_IntInit (void)
 {
     mAD1SetIntPriority(INT_PRIORITY_LEVEL_3);                           /* Set interrupt priority level to 3                        */
     mAD1ClearIntFlag();                                                 /* Clear interrupt flag, just in case                       */
-    mAD1IntEnable(1);                                                   /* Enable interrupts                                        */
+    mAD1IntEnable(0);                                                   /* Disable interrupts                                        */
 }
         
 /*
@@ -1107,5 +1106,4 @@ void  BSP_InitIO (void)
     LCD_Init();                                                         /* Initialize the LCD                               */
     PB_Init();                                                          /* Initialize the push buttons                      */
     ADC_Init();
-	//TIMER1_Init();
 }

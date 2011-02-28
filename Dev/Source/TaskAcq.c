@@ -21,7 +21,7 @@
 #include <TaskAcq.h>
 #include <global.h>
 #include <encoder.h>
-#include <app_cfg.h>
+#include <drone.h>
 
 
 /*
@@ -30,7 +30,6 @@
 *********************************************************************************************************
 */
 OS_STK       AppTaskAcqStk[APP_TASK_ACQ_STK_SIZE];
-TDrone drone;
 
 /*
 *********************************************************************************************************
@@ -38,8 +37,7 @@ TDrone drone;
 *********************************************************************************************************
 */
 static void AppTaskAcq(void *p_arg);
-static void init_drone(TDrone *This);
-static void init_sensor(TSensor *This, byte resolution, INT16U freq);
+
 /*
 *********************************************************************************************************
 *                                            FUNCTION
@@ -48,6 +46,7 @@ static void init_sensor(TSensor *This, byte resolution, INT16U freq);
 void create_acqtask(void)
 {
 	INT8U	err; 
+	
 	drone.acq.routine = AppTaskAcq;
 	drone.acq.start_acq = OSFlagCreate(0x0000, &err);
 	if(err != OS_NO_ERR)
@@ -69,28 +68,6 @@ void create_acqtask(void)
                     OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
 }
 
-
-
-
-static void init_drone(TDrone *This)
-{
-	byte i = 0;
-
-	init_sensor(&This->sensor[i++], ACCEL_RES, ACCEL_FS);
-	This->sensor[i++].get_sample = ADC_GetVal;
-
-	init_sensor(&This->sensor[i++], ACCEL_RES, ACCEL_FS);
-	This->sensor[i++].get_sample = ADC_GetVal;
-
-	init_enc(&This->acq.enc, This->sensor);
-}
-
-static void init_sensor(TSensor *This, byte resolution, INT16U freq)
-{
-	This->sample.res = resolution;
-	This->fs = freq;
-}
-
 /*
 *********************************************************************************************************
 *                                        Acq  TASK
@@ -105,8 +82,11 @@ static void init_sensor(TSensor *This, byte resolution, INT16U freq)
 static void AppTaskAcq(void *p_arg)
 {
 	byte err, i, ratio;
+	char str[10];
+	TAcq *This = &drone.acq;
 	TSample  sample;
     TSensor* psensor;
+    
 
 	TIMER1_Init();
 	
@@ -114,19 +94,22 @@ static void AppTaskAcq(void *p_arg)
 	while(1)
 	{
 		LED_Toggle(GREEN_LED);
-		OSFlagPend(drone.acq.start_acq, (1 << 10), OS_FLAG_WAIT_SET_ALL + OS_FLAG_CONSUME, 0, &err);		
+		OSFlagPend(This->start_acq, (1 << 10), OS_FLAG_WAIT_SET_ALL + OS_FLAG_CONSUME, 0, &err);		
 		if(err == OS_NO_ERR)
 		{
 			//--- Here we can start the acquisition
 			LED_Toggle(ORANGE_LED);
-			drone.acq.enc.AcqSeq++;
+			This->enc.AcqSeq++;
 			for(i = 0; i < NB_SENSOR; i++)
 			{
-				ratio = drone.acq.enc.fsmax / drone.sensor[i].fs;
-				if((drone.acq.enc.AcqSeq % ratio) == 0)
+				ratio = This->enc.fsmax / drone.sensor[i].fs;
+				if((This->enc.AcqSeq % ratio) == 0)
 				{
 					sample.res = drone.sensor[i].sample.res;
-					//sample.value = drone.sensor[i].get_sample();
+					sample.value = drone.sensor[i].get_sample();
+					
+					sprintf(str, "%x\r\n", sample.value);
+					UART_TxStr(str);
 					// TODO: copy into a frame
 				}
 			}
