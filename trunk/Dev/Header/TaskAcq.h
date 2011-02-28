@@ -34,22 +34,13 @@ typedef struct{
 	OS_FLAG_GRP* start_acq;
 	TEncoder enc;
 	TFrame trame;
-}TACQ;
-
-typedef struct{
-	TACQ acq;
-	TSensor sensor[NB_SENSOR];
-}TDrone;
-	
+}TAcq;
 
 /*
 *********************************************************************************************************
 *                                                VARIABLES
 *********************************************************************************************************
 */
-//extern OS_STK       AppTaskAcqStk[APP_TASK_ACQ_STK_SIZE];
-//extern TACQ acq;
-extern TDrone drone;
 
 /*
 *********************************************************************************************************

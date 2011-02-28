@@ -41,16 +41,6 @@ typedef struct{
 	byte eof;
 }TFrame; 
 
-typedef struct{
-	INT16U	value;
-	byte	res;
-}TSample;
-
-typedef struct{
-	TSample	sample;
-	INT16U	fs;
-	TPfct1 get_sample;
-}TSensor; 
 
 
 /*
