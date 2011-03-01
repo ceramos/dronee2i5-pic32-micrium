@@ -50,17 +50,9 @@ void        LED_On              (CPU_INT08U led);
 
 
 void        BSP_ADCHandler      (void);
-void        BSP_UARTHandler     (void);
 void        BSP_CNHandler       (void);
 void        BSP_TickISR_Handler (void);
 void        BSP_Except_Handler  (void);
-
-void        UART_Init           (void);
-void        UART_RxStr          (CPU_CHAR *str, CPU_INT16U num);    
-void        UART_TxByte         (CPU_CHAR c);
-void        UART_TxStr          (CPU_CHAR  *str);
-CPU_INT32U  UART_CalcBRG        (CPU_INT32U baud_rate);
-CPU_CHAR    UART_RxByte         (void);
 
 void        BSP_InitIO          (void);
 void        BSP_IntDisableALL   (void);
