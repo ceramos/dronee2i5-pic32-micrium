@@ -30,9 +30,13 @@
 #define ACCEL_RES	14
 #define ACCEL_FS	1000
 
+typedef INT8U byte;
+
 typedef void (*TPfct)(void *arg);
 typedef INT16U (*TPfct1)(void);
-typedef INT8U byte;
+typedef void (*TPfct2)(byte);
+typedef void (*TPfct3)(byte, byte);
+
 
 typedef struct{
 	byte	sof;

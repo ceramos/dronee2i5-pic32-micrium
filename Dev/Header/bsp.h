@@ -11,7 +11,8 @@
 *                                              Explorer 16
 *********************************************************************************************************
 */
-
+#ifndef		_BSP_H_
+#define 	_BSP_H_
 #include "bsp_peripherals.h"
 
 /*
@@ -73,3 +74,5 @@ void        BSP_Dly             (CPU_INT32U  us);
 CPU_INT16U  ADC_GetVal          (void);
 
 void  TIMER1_Init (void);
+void  TIMER2_Init (void);
+#endif 	// _BSP_H_

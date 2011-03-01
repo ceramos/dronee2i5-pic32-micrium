@@ -18,7 +18,8 @@
 #include "timer.h"
 #include "uart.h"
 #include "adc10.h"
-#include <drone.h>
+#include "pwm.h"
+#include "drone.h"
 
 /*
 *********************************************************************************************************
@@ -726,7 +727,7 @@ static  void  LCD_Init (void)
 *********************************************************************************************************
 *                                       TIMER1_Init()
 *
-* Description: This function performs the initialization for the ADC.
+* Description: This function performs the initialization for the TIMER1.
 *
 * Arguments  : None
 *
@@ -751,6 +752,26 @@ void  TIMER1_Init (void)
     //ADC_TmrInit();                                                      /* Initialize the timer used for the ADC            */
     //EnableADC10();                                                      /* Enable the ADC                                   */
 }
+
+/*
+*********************************************************************************************************
+*                                       TIMER2_Init()
+*
+* Description: This function performs the initialization for the TIMER2.
+*
+* Arguments  : None
+*
+* Returns    : None
+*********************************************************************************************************
+*/
+
+void  TIMER2_Init (void)
+{
+		/* Open Timer2 with Period register value */
+	OpenTimer2(T2_ON | T2_PS_1_32, TIMER_PWM);
+	ConfigIntTimer1(T1_INT_OFF | T1_INT_PRIOR_2);
+}
+
 /*
 *********************************************************************************************************
 *                                       ADC_Init()
