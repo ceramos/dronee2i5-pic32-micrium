@@ -21,8 +21,9 @@
 *********************************************************************************************************
 */
 //#include <includes.h>
-#include <TaskAcq.h>
-#include <sensor.h>
+#include "TaskAcq.h"
+#include "sensor.h"
+#include "motor.h"
 
 
 /*
@@ -36,10 +37,12 @@
 *                                                DEFINES
 *********************************************************************************************************
 */
-#define NB_SENSOR 2
+#define NB_SENSOR	2
+#define NB_MOTOR	4
 typedef struct{
 	TAcq acq;
 	TSensor sensor[NB_SENSOR];
+	TMotor motor[NB_MOTOR];
 }TDrone;
 
 /*

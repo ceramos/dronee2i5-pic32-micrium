@@ -18,10 +18,10 @@
 *********************************************************************************************************
 */
 #include <includes.h>
-#include <TaskAcq.h>
-#include <global.h>
-#include <encoder.h>
-#include <drone.h>
+#include "TaskAcq.h"
+#include "global.h"
+#include "encoder.h"
+#include "drone.h"
 
 
 /*
@@ -88,28 +88,28 @@ static void AppTaskAcq(void *p_arg)
     TSensor* psensor;
     
 
-	TIMER1_Init();
-	
+	TIMER1_Init();	// Use as Tick for the AcqTask
+	TIMER2_Init();	// Use as Tick for the PWM
+
 	init_drone(&drone);
 	while(1)
 	{
-		LED_Toggle(GREEN_LED);
-		OSFlagPend(This->start_acq, (1 << 10), OS_FLAG_WAIT_SET_ALL + OS_FLAG_CONSUME, 0, &err);		
+		drone.motor[MOTOR1-1].set_speed(MOTOR1, 100);
+		OSFlagPend(This->start_acq, (1 << 10), OS_FLAG_WAIT_SET_ALL + OS_FLAG_CONSUME, 0, &err);	// Wait for the TIMER1 Tick		
 		if(err == OS_NO_ERR)
 		{
 			//--- Here we can start the acquisition
-			LED_Toggle(ORANGE_LED);
 			This->enc.AcqSeq++;
-			for(i = 0; i < NB_SENSOR; i++)
+			for(i = 0; i < NB_SENSOR; i++)			// Each of the sensor
 			{
 				ratio = This->enc.fsmax / drone.sensor[i].fs;
-				if((This->enc.AcqSeq % ratio) == 0)
+				if((This->enc.AcqSeq % ratio) == 0)		// Does the sensor have to sampling?
 				{
 					sample.res = drone.sensor[i].sample.res;
-					sample.value = drone.sensor[i].get_sample();
+					sample.value = drone.sensor[i].get_sample();	// Get the sample
 					
-					sprintf(str, "%x\r\n", sample.value);
-					UART_TxStr(str);
+					//sprintf(str, "%x\r\n", sample.value);		
+					//UART_TxStr(str);
 					// TODO: copy into a frame
 				}
 			}

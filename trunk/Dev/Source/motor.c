@@ -9,7 +9,7 @@
 *
 *                                            MIPS Sample code
 *
-* File : drone.c
+* File : motor.c
 *********************************************************************************************************
 */
 /*
@@ -18,15 +18,16 @@
 *********************************************************************************************************
 */
 #include <includes.h>
-#include "drone.h"
-
+#include "global.h"
+#include "motor.h"
+#include "pwm.h"
 
 /*
 *********************************************************************************************************
 *                                                VARIABLES
 *********************************************************************************************************
 */
-TDrone drone;
+
 /*
 *********************************************************************************************************
 *                                            FUNCTION PROTOTYPES
@@ -39,24 +40,18 @@ TDrone drone;
 *                                            FUNCTION
 *********************************************************************************************************
 */
+
 /**
- * @brief: init a drone
- * @param: TDrone* This  Pointer to a drone struct
+ * @brief: init a motor
+ * @param: TMotor* This  Pointer to a motor struct
+ * @param: byte speed	Speed of the motor in %
+ * @param: byte channel Select the PWM output
  * @return: void
  */
-void init_drone(TDrone *This)
+void init_motor(TMotor* This, byte speed, byte channel)
 {
-	byte i = 0;
-
-	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
-	This->sensor[i++].get_sample = &ADC_GetVal;
-
-	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
-	This->sensor[i++].get_sample = &ADC_GetVal;
-
-	init_enc(&This->acq.enc, This->sensor);
-	for(i=0; i<4; i++)
-	{
-		init_motor(&This->motor[i], 5, i + MOTOR1);
-	}
+	This->speed = speed;
+	This->set_speed = &PWM_Set;
+	This->channel = channel;
+	init_pwm(This->channel);
 }
