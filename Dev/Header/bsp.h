@@ -24,8 +24,6 @@
 #define  BSP_CLK_FREQ               72000000
 //#define  JTAG_ENABLE                DEF_DISABLED
 #define  JTAG_ENABLE                DEF_ENABLED
-#define  LCD_LINE_1                 0x02
-#define  LCD_LINE_2                 0xC0
 	
 #define	 ALL_LED					0
 #define	 GREEN_LED					1
@@ -66,8 +64,6 @@ CPU_CHAR    UART_RxByte         (void);
 
 void        BSP_InitIO          (void);
 void        BSP_IntDisableALL   (void);
-
-void        LCD_Disp            (CPU_INT08U pos, CPU_CHAR *str);
 
 void        BSP_Dly             (CPU_INT32U  us);
 

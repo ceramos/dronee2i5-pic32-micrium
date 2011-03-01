@@ -66,15 +66,6 @@
 
 #endif
 
-#define  LCD_DATA_TRIS            (*((volatile CPU_INT08U*)&TRISE))
-#define  LCD_DATA_IO              (*((volatile CPU_INT08U*)&LATE))
-#define  LCD_RD_WR_TRIS           TRISDbits.TRISD5
-#define  LCD_RD_WR_IO             LATDbits.LATD5
-#define  LCD_RS_TRIS              TRISBbits.TRISB15
-#define  LCD_RS_IO                LATBbits.LATB15
-#define  LCD_E_TRIS               TRISDbits.TRISD4
-#define  LCD_E_IO                 LATDbits.LATD4
-
 #define  PB0_MASK                 _PORTD_RD13_MASK
 #define  PB0_TRIS                 TRISDbits.TRISD13
 #define  PB0_IO                   LATDbits.LATD13
@@ -108,9 +99,6 @@ static  void  Tmr_Init      (void);
 
 static  void  UART_Config   (CPU_INT32U baud_rate);
 static  void  UART_IntEn    (void);
-
-static  void  LCD_Init      (void);
-static  void  LCD_Write     (CPU_INT08U w_type, CPU_CHAR val);
 
 static  void  PB_IntInit    (void);
 static  void  PB_Config     (void);
@@ -627,104 +615,6 @@ void  UART_TxStr (CPU_CHAR  *str)
 
 /*
 *********************************************************************************************************
-*                                       LCD_Disp()
-*
-* Description: This function outputs a string to the debug LCD.
-*
-* Arguments  : pos          The position on the debug LCD to output to.
-*                            LCD_LINE_1 - outputs to the first line of the debug LCD
-*                            LCD_LINE_2 - outputs to the second line of the debug LCD
-*              str          A pointer the the location of the string to be output.
-*
-* Returns    : None
-*********************************************************************************************************
-*/
-
-void  LCD_Disp (CPU_INT08U pos, CPU_CHAR *str)
-{
-    LCD_Write(0, pos);                                                  /* Perform a control write setting the position     */
-    BSP_Dly(5);
-    
-    if (*str) {
-        do {
-            LCD_Write(1, *str++);                                       /* Write the string, 1 character at at time         */
-            BSP_Dly(5);
-        } while (*str);     
-    }    
-}  
-
-/*
-*********************************************************************************************************
-*                                       LCD_Write()
-*
-* Description: This function performs a control write or outputs a single character to the debug LCD.
-*
-* Arguments  : w_type       The type of write to perform.
-*                            0 - control write
-*                            1 - outputs to the debug LCD
-*              val          The value to write.
-*
-* Returns    : None
-*********************************************************************************************************
-*/
-
-static  void  LCD_Write (CPU_INT08U w_type, CPU_CHAR val)
-{
-    LCD_DATA_TRIS  =      0;
-    LCD_RS_TRIS    =      0;
-    LCD_RD_WR_TRIS =      0;
-    LCD_RD_WR_IO   =      0;
-    LCD_RS_IO      = w_type;
-    LCD_DATA_IO    =    val;
-    BSP_Dly(1);
-    LCD_E_IO       =      1;
-    BSP_Dly(1);
-    LCD_E_IO       =      0;
-    LCD_DATA_TRIS  =   0xFF;
-    LCD_RS_TRIS    =      1;
-    LCD_RD_WR_TRIS =      1;
-}              
-
-/*
-*********************************************************************************************************
-*                                       LCD_Init()
-*
-* Description: This function performs the initialization for the LCD.
-*
-* Arguments  : None
-*
-* Returns    : None
-*********************************************************************************************************
-*/
-
-static  void  LCD_Init (void)
-{
-    LCD_E_IO       =    0;
-    LCD_RD_WR_IO   =    0;
-    LCD_DATA_TRIS  =    0;  
-    LCD_RD_WR_TRIS =    0;
-    LCD_RS_TRIS    =    0;
-    LCD_E_TRIS     =    0;
-    BSP_Dly(40000);
-    LCD_RS_IO      =    0;
-    LCD_DATA_IO    = 0x03;
-    BSP_Dly(1);
-    LCD_E_IO       =    1;
-    BSP_Dly(1);
-    LCD_E_IO       =    0;
-    BSP_Dly(5);
-    LCD_Write(0, 0x38);
-    BSP_Dly(5);
-    LCD_Write(0, 0x06);
-    BSP_Dly(5);
-    LCD_Write(0, 0x0C);
-    BSP_Dly(5);
-    LCD_Write(0, 0x01);
-    BSP_Dly(2);
-} 
-
-/*
-*********************************************************************************************************
 *                                       TIMER1_Init()
 *
 * Description: This function performs the initialization for the TIMER1.
@@ -1123,8 +1013,7 @@ void  BSP_InitIO (void)
     BSP_InitIntCtrl();                                                  /* Initialize the interrupt controller              */
     BSP_IO_Init();                                                      /* Initialize the board's I/Os                      */
     Tmr_Init();                                                         /* Initialize the timers                            */
-    LED_Init();                                                         /* Initialize LEDs                                  */
-    LCD_Init();                                                         /* Initialize the LCD                               */
+    LED_Init();                                                         /* Initialize LEDs                                    */
     PB_Init();                                                          /* Initialize the push buttons                      */
     ADC_Init();
 }
