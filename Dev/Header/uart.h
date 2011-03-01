@@ -673,4 +673,7 @@ unsigned int getsUART2(unsigned int length, char* buffer, unsigned int uart_data
 	#define SetPriorityIntU2TX		SetPriorityIntU2
 
 
+
+
+
 #endif /*_UART_H */
