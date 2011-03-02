@@ -51,11 +51,8 @@ void create_acqtask(void)
 	drone.acq.start_acq = OSFlagCreate(0x0000, &err);
 	if(err != OS_NO_ERR)
 	{
-		while(1)
-		{
-			LED_On(GREEN_LED);
-				//mPORTDToggleBits(IOPORT_BIT_3);	
-		} 	
+		//Erreur lors de la création de la tâche
+//		DBPRINTF("create_acqtask: err = %d\n", err);
 	}
 	OSTaskCreateExt(drone.acq.routine,
                    (void *)0,
@@ -91,10 +88,15 @@ static void AppTaskAcq(void *p_arg)
 	TIMER1_Init();	// Use as Tick for the AcqTask
 	TIMER2_Init();	// Use as Tick for the PWM
 
+
+	mPORTEOutputConfig(IOPORT_BIT_6);
+
 	init_drone(&drone);
 	while(1)
 	{
-		drone.motor[MOTOR1-1].set_speed(MOTOR1, 100);
+		mPORTEToggleBits(IOPORT_BIT_6);
+
+//		drone.motor[MOTOR1-1].set_speed(MOTOR1, 100);
 		OSFlagPend(This->start_acq, (1 << 10), OS_FLAG_WAIT_SET_ALL + OS_FLAG_CONSUME, 0, &err);	// Wait for the TIMER1 Tick		
 		if(err == OS_NO_ERR)
 		{

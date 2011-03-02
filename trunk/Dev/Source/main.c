@@ -14,10 +14,8 @@
 */
 
 #include <includes.h>
-#include <TaskGreenLed.h>
-#include <TaskRedLed.h>
-#include <TaskOrangeLed.h>
 #include <TaskAcq.h>
+#include <TaskUartRx.h>
 #include <drone.h>
 
 /*
@@ -145,32 +143,6 @@ static  void  AppTaskStart (void *p_arg)
 static  void  AppTaskCreate (void)
 {
     CPU_INT08U  err;
-   /*
-    OSTaskCreateExt(AppTaskGreenLed,
-                   (void *)0,
-                   (OS_STK *)&AppTaskGreenLedStk[APP_TASK_GREEN_LED_STK_SIZE - 1],
-                    APP_TASK_GREEN_LED_PRIO,
-                    APP_TASK_GREEN_LED_PRIO,
-                   (OS_STK *)&AppTaskGreenLedStk[0],
-                    APP_TASK_GREEN_LED_STK_SIZE,
-                   (void *)0,
-                    OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR);
-                    
-    OSTaskNameSet(APP_TASK_GREEN_LED_PRIO, (INT8U *)"Green Led", &err);
-
-    OSTaskCreate(AppTaskOrangeLed,
-                   (void *)0,
-                   (OS_STK *)&AppTaskOrangeLedStk[APP_TASK_ORANGE_LED_STK_SIZE - 1],
-                    APP_TASK_ORANGE_LED_PRIO);
-
-    OSTaskNameSet(APP_TASK_ORANGE_LED_PRIO, (INT8U *)"Orange Led", &err);
-	*/
-    OSTaskCreate(AppTaskRedLed,
-                   (void *)0,
-                   (OS_STK *)&AppTaskRedLedStk[APP_TASK_RED_LED_STK_SIZE - 1],
-                    APP_TASK_RED_LED_PRIO);
-
-    OSTaskNameSet(APP_TASK_RED_LED_PRIO, (INT8U *)"Red Led", &err);
 
 	/*
     OSTaskCreate(AppTaskUartTransmit,
@@ -180,7 +152,10 @@ static  void  AppTaskCreate (void)
 
     OSTaskNameSet(APP_TASK_UART_TRANSMIT_PRIO, (INT8U *)"Uart Transmit", &err);
 	*/
+
+	//Création des taches
 	create_acqtask();
+	create_uartRxtask();
 }
 
 /*$PAGE*/
