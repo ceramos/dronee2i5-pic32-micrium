@@ -337,7 +337,8 @@ void  TIMER1_Init (void)
 	mPORTDSetPinsDigitalOut(IOPORT_BIT_3);
 	mPORTDClearBits(IOPORT_BIT_3);
 	// STEP 2. configure Timer 1 using internal clock, 1:256 prescale
-    OpenTimer1(T1_ON | T1_SOURCE_INT | T1_PS_1_256, 282);
+ //   OpenTimer1(T1_ON | T1_SOURCE_INT | T1_PS_1_256, 65000);
+   OpenTimer1(T1_ON | T1_SOURCE_INT | T1_PS_1_256, 282);
 
     // set up the timer interrupt with a priority of 2
     ConfigIntTimer1(T1_INT_ON | T1_INT_PRIOR_2);
@@ -364,9 +365,9 @@ void  TIMER1_Init (void)
 
 void  TIMER2_Init (void)
 {
-		/* Open Timer2 with Period register value */
+	/* Open Timer2 with Period register value */
 	OpenTimer2(T2_ON | T2_PS_1_32, TIMER_PWM);
-	ConfigIntTimer1(T1_INT_OFF | T1_INT_PRIOR_2);
+	ConfigIntTimer2(T2_INT_OFF | T2_INT_PRIOR_2);
 }
 
 /*

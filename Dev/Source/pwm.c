@@ -58,7 +58,7 @@ void init_pwm(byte channel)
 		
 		break;
 	}	
-	DBPRINTF("timer2 =%d, pwm = %d\n", TIMER_PWM, VALEUR_PWM_MOTEUR_ARRET);
+//	DBPRINTF("timer2 =%d, pwm = %d\n", TIMER_PWM, VALEUR_PWM_MOTEUR_ARRET);
 
 }
 /**
@@ -85,7 +85,7 @@ void PWM_Set(byte channel,byte speed)
 	int valeur_pwm = (int)(pwm_Float);
 
 
-	DBPRINTF("Assignation au moteur %d d'une vitesse de %d \%, soit %d ticks\n", channel, speed, valeur_pwm);
+//	DBPRINTF("Assignation au moteur %d d'une vitesse de %d \%, soit %d ticks\n", channel, speed, valeur_pwm);
 
 
 	switch(channel)

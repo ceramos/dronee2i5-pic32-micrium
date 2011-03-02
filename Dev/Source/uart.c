@@ -1,7 +1,31 @@
+/*
+*********************************************************************************************************
+*                                                INCLUDES
+*********************************************************************************************************
+*/
 #include "uart_header.h"
 #include "uart.h"
+#include "global.h"
 
 
+/*
+*********************************************************************************************************
+*                                                VARIABLES
+*********************************************************************************************************
+*/
+byte		 Uart_Rx_Circular_Buffer[CIRCULAR_BUFFER_SIZE];
+
+byte		 Circular_Buffer_Read_Index  = 0;
+byte		 Circular_Buffer_Write_Index = 0;
+
+CPU_BOOLEAN	 Circular_Buffer_Overflow = OS_FALSE;
+
+
+/*
+*********************************************************************************************************
+*                                            FUNCTION
+*********************************************************************************************************
+*/
 
 /**
 * Description: This function calculates the correct multiplier for the selected baud rate.
@@ -87,8 +111,15 @@ void  UART_Config (CPU_INT32U baud_rate)
 */
 void  UART_Init (void)
 {
+	int i;
+	//initialisation des tableaux
+	for(i=0; i<CIRCULAR_BUFFER_SIZE-1; i++)
+	{
+		Uart_Rx_Circular_Buffer[i] = 0;
+	}
+
     UART_Config(BSP_BAUD_RATE);
-    UART_IntEn();   
+    UART_IntEn();
 }
 
 /**
@@ -132,7 +163,7 @@ void  UART_TxStr (CPU_CHAR  *str)
 } 
 
 /**
-* Description: This function handles interrupts from the UART.
+* Description: This function handles interrupts from the UART and insert the received byte into the buffer
 * Arguments  : None
 * Returns    : None
 */
@@ -141,7 +172,6 @@ void  BSP_UARTHandler (void)
     CPU_INT32U  status;
     CPU_INT32U  int_en;
     
-    
     status           = BSP_UART_INTSTAT;                                /* Read the interrupt status register               */
     int_en           = BSP_UART_INTEN;                                  /* Read the interrupt enabled register              */
     
@@ -149,7 +179,27 @@ void  BSP_UARTHandler (void)
     BSP_UART_INTCLR  = status;                                          /* Clear all triggered interrupts                   */
     status          &= int_en;                                          /* Mask non-enabled interrupts                      */
     
-    if (status & BSP_UART_INTRX) {                                      /* If a Rx interrupt has occured and is enabled...  */
-        UART_TxByte(UART_RxByte());                                     /* Notify Probe and provide the incoming character  */
-    }
+    if (status & BSP_UART_INTRX)
+	{ 
+	   //If a Rx interrupt has occured and is enabled...
+	   //On stocke l'octet recu dans le buffer circulaire
+	   Uart_Rx_Circular_Buffer[Circular_Buffer_Write_Index] = UART_RxByte();
+		
+		//On incrémente l'index d'écriture du buffer	
+		if(Circular_Buffer_Write_Index >= (CIRCULAR_BUFFER_SIZE - 1))
+		{
+			Circular_Buffer_Write_Index = 0;	
+		}
+		else
+		{
+			Circular_Buffer_Write_Index++;
+		}
+		
+		//Si l'index d'écriture est égal à l'index de lecture, c'est que le buffer est plein (on vient de faire un tour)
+		if(Circular_Buffer_Write_Index == Circular_Buffer_Read_Index)
+		{
+			//TODO: gérer le buffer overflow
+			Circular_Buffer_Overflow = OS_TRUE;
+		}
+	}
 }

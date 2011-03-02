@@ -30,6 +30,10 @@
 #define ACCEL_RES	14
 #define ACCEL_FS	1000
 
+//Concernant l'UART
+#define UART_TRANSMIT_TRAME_SIZE 19
+
+
 typedef INT8U byte;
 
 typedef void (*TPfct)(void *arg);
@@ -46,6 +50,28 @@ typedef struct{
 }TFrame; 
 
 
+typedef enum
+{
+	OFFSET_TRAME_ID=0,
+	OFFSET_DATA_SIZE,
+	OFFSET_MOTEUR_1,
+	OFFSET_MOTEUR_2,
+	OFFSET_MOTEUR_3,
+	OFFSET_MOTEUR_4,
+	OFFSET_CHECK_VALID,
+	UART_RX_FRAME_SIZE
+}TOffsetUartRxFrame;
+
+
+//Trame réception: 7 octets: [ID(OxAA)]_[TAILLE_DATA(4)]_[MOTEUR_X(0-100)]_[TAILLE^^OxFF]
+typedef enum
+{
+	UART_RX_FRAME_ID = 0xAA,
+	UART_RX_FRAME_DATA_SIZE = 4,
+	UART_RX_FRAME_CHECK_VALID = (UART_RX_FRAME_DATA_SIZE ^ 0xFF)
+}TUartRxFrameConst;
+
+#define VITESSE_MAX_MOTEURS 100
 
 /*
 *********************************************************************************************************
