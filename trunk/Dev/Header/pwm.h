@@ -22,16 +22,17 @@
 *********************************************************************************************************
 */
 #include "global.h"
+#include "bsp.h"
+
 /*
 *********************************************************************************************************
 *                                                DEFINES
 *********************************************************************************************************
 */
-#define SYS_FREQ	72000000
 //Trame réception: 7 octets: [ID(OxAA)]_[TAILLE_DATA(4)]_[MOTEUR_X(0-100)]_[TAILLE^^OxFF]
 
 #define FREQUENCE_PWM 	(50)
-#define TIMER_PWM		SYS_FREQ/(32*FREQUENCE_PWM)
+#define TIMER_PWM		BSP_CLK_FREQ /(32*FREQUENCE_PWM)
 #define PERIODE_PWM_MS (1000/FREQUENCE_PWM) 
 
 #define DUTY_CYCLE_MOTEUR_ARRET 5

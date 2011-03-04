@@ -30,6 +30,10 @@
 #define ACCEL_RES	14
 #define ACCEL_FS	1000
 
+//Concernant l'altimètre
+#define ALTIMETER_MICROSECOND_PER_INCH 147
+#define CM_PER_INCH 2.54
+
 //Concernant l'UART
 #define UART_TRANSMIT_TRAME_SIZE 19
 
