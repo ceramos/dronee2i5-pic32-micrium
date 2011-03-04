@@ -82,12 +82,8 @@ void INPUT_CAPTURE_Stop()
 */
 void  BSP_INPUT_CAPTURE1Handler (void)
 {
-	int pause;
-
 	if(PORTDbits.RD8 == 0)
 	{	
-		mPORTDClearBits(BIT_2);
-
 		if(mIC1CaptureReady())
 			fallingEdgeValue = mIC1ReadCapture();
 		else 
@@ -96,7 +92,6 @@ void  BSP_INPUT_CAPTURE1Handler (void)
 		if(fallingEdgeValue > risingEdgeValue)
 		{
 			ecart = fallingEdgeValue - risingEdgeValue;
-			mPORTDClearBits(BIT_1);
 		}
 		else
 		{
@@ -110,29 +105,7 @@ void  BSP_INPUT_CAPTURE1Handler (void)
 	else
 	{
 		//On met le compteur à 0
-		mPORTDToggleBits(BIT_2);
 		risingEdgeValue = mIC1ReadCapture();
 	}
 	mIC1ClearIntFlag();
-}
-
-//BSP_CLK_FREQ 
-short int getAltitudeAsInch()
-{
-	return (((float)getHighStateTime()) / ALTIMETER_MICROSECOND_PER_INCH);
-}
-
-short int getAltitudeAsMilliMeter()
-{
-	return getAltitudeAsInch() * CM_PER_INCH;
-}
-
-short int getAltitudeAsCentiMeter()
-{
-	return getAltitudeAsInch() * CM_PER_INCH;
-}
-
-short int getHighStateTime()
-{
-	return (int)(ecart * MICROSECOND_PER_TIMER3_TICK);
 }

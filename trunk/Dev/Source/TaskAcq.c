@@ -22,6 +22,7 @@
 #include "global.h"
 #include "encoder.h"
 #include "drone.h"
+#include "inputCapture.h"
 
 
 /*
@@ -88,6 +89,7 @@ static void AppTaskAcq(void *p_arg)
 	TIMER1_Init();	// Use as Tick for the AcqTask
 	TIMER2_Init();	// Use as Tick for the PWM
 
+	INPUT_CAPTURE_Init();	//Altimètre
 
 	mPORTEOutputConfig(IOPORT_BIT_6);
 
