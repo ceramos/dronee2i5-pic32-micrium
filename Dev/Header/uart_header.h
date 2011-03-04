@@ -18,7 +18,7 @@
 *                                                DEFINES
 *********************************************************************************************************
 */
-#define CIRCULAR_BUFFER_SIZE	(UART_RX_FRAME_SIZE*2)	
+#define CIRCULAR_BUFFER_SIZE	(UART_RX_FRAME_SIZE*3)	
 
 #if (BSP_UART == BSP_UART1)
 

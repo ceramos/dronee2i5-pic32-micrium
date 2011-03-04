@@ -20,6 +20,8 @@
 #include <includes.h>
 #include "drone.h"
 
+#include "altimeter.h"
+
 
 /*
 *********************************************************************************************************
@@ -53,6 +55,11 @@ void init_drone(TDrone *This)
 
 	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
 	This->sensor[i++].get_sample = &ADC_GetVal;
+
+	//Altimètre
+	init_sensor(&This->sensor[i], ALTIMETER_RES, ALTIMETER_FS);
+	This->sensor[i++].get_sample = &getAltitudeAsCentiMeter;
+	
 
 	init_enc(&This->acq.enc, This->sensor);
 	for(i=0; i<4; i++)

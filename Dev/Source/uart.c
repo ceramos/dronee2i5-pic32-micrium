@@ -36,7 +36,6 @@ CPU_INT32U  UART_CalcBRG (CPU_INT32U baud_rate)
 {
     CPU_INT32U  brg;
     
-    
     brg = BSP_CLK_FREQ / (16 * baud_rate) - 1;
     
     return (brg);
@@ -51,8 +50,7 @@ CPU_INT32U  UART_CalcBRG (CPU_INT32U baud_rate)
 void  UART_IntEn (void)
 {
     CPU_INT08U  config;
-    
-    
+        
     config = UART_INT_PR3
            | UART_INT_SUB_PR0
            | UART_RX_INT;

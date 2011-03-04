@@ -1,5 +1,5 @@
-#ifndef _INPUT_CAPTURE1_H
-#define _INPUT_CAPTURE1_H
+#ifndef _ALTIMETER_H
+#define _ALTIMETER_H
 
 
 /*
@@ -19,7 +19,8 @@
 *********************************************************************************************************
 */
 
-#define PRESCALER_TIMER_3 256
+#define SECOND_PER_TIMER3_TICK 		(((1.0/BSP_CLK_FREQ) * PRESCALER_TIMER_3))
+#define MICROSECOND_PER_TIMER3_TICK (1000000*SECOND_PER_TIMER3_TICK)
 
 
 
@@ -28,10 +29,8 @@
 *                                            FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
+CPU_INT16U getAltitudeAsCentiMeter();
+CPU_INT16U getAltitudeAsInch();
+CPU_INT16U getHighStateTime();
 
-void INPUT_CAPTURE_Init(void);
-void INPUT_CAPTURE_Stop();
-
-void        BSP_INPUT_CAPTURE1Handler     (void);
-
-#endif /*_INPUT_CAPTURE1_H */
+#endif /*_ALTIMETER_H */

@@ -26,9 +26,11 @@
 *                                                DEFINE
 *********************************************************************************************************
 */
-#define NB_SENSOR 	2
 #define ACCEL_RES	14
 #define ACCEL_FS	1000
+
+#define ALTIMETER_RES	16
+#define ALTIMETER_FS	25
 
 //Concernant l'altimètre
 #define ALTIMETER_MICROSECOND_PER_INCH 147
