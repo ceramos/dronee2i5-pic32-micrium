@@ -23,6 +23,7 @@
 #include "encoder.h"
 #include "drone.h"
 #include "inputCapture.h"
+#include "uart_transmit.h"
 
 
 /*
@@ -86,12 +87,11 @@ static void AppTaskAcq(void *p_arg)
     TSensor* psensor;
     
 	TIMER1_Init();	// Use as Tick for the AcqTask
-
+	
 	while(1)
 	{
 		mPORTEToggleBits(IOPORT_BIT_6);
 
-//		drone.motor[MOTOR1-1].set_speed(MOTOR1, 100);
 		OSFlagPend(This->start_acq, (1 << 10), OS_FLAG_WAIT_SET_ALL + OS_FLAG_CONSUME, 0, &err);	// Wait for the TIMER1 Tick		
 		if(err == OS_NO_ERR)
 		{
@@ -105,11 +105,12 @@ static void AppTaskAcq(void *p_arg)
 					sample.res = drone.sensor[i].sample.res;
 					sample.value = drone.sensor[i].get_sample();	// Get the sample
 					
-					//sprintf(str, "%x\r\n", sample.value);		
-					//UART_TxStr(str);
-					// TODO: copy into a frame
+					//copy into a frame
+					UART_Transmit_AddSample(&sample);
 				}
 			}
+			//sends the frame
+			UART_Transmit_SendFrame();
 		}
 	}
 }

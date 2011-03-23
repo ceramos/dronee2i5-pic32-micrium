@@ -53,7 +53,6 @@ void init_enc(TEncoder *This, TSensor *sensor)
 
 void compact(TSample *sample, TFrame *frame)
 {
-
 }
 
 /*
