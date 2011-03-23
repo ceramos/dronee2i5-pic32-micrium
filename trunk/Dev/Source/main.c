@@ -28,9 +28,6 @@ static  OS_STK       AppTaskStartStk[APP_TASK_START_STK_SIZE];
 static  OS_STK       AppTaskUartTransmitStk[APP_TASK_UART_TRANSMIT_STK_SIZE];
 
 /* declaration of flag group */
-OS_FLAG_GRP *flagLeds;
-
-BOOLEAN orangeLedBlinking = OS_FALSE;
 
 /*
 *********************************************************************************************************
@@ -76,12 +73,8 @@ int  main (void)
 #if OS_TASK_NAME_SIZE > 13
     OSTaskNameSet(APP_TASK_START_PRIO, "Startup", &err);
 #endif
-
 	
 	/* within main programm, between OSInit() and OSStart() */
-	flagLeds = OSFlagCreate(0x0000, &err);
-
-
     OSStart();          //the last function called from main                                                /* Start multitasking (i.e. give control to uC/OS-II)       */
 }
 
@@ -115,10 +108,21 @@ static  void  AppTaskStart (void *p_arg)
 #if (OS_TASK_STAT_EN > 0)
     OSStatInit();                                                       /* Determine CPU capacity                                   */
 #endif
-/*
-#if (uC_PROBE_OS_PLUGIN > 0) || (uC_PROBE_COM_MODULE > 0)
-    AppProbeInit();                                                     /* Initialize uC/Probe modules                              */
+
+//#if (uC_PROBE_OS_PLUGIN > 0) || (uC_PROBE_COM_MODULE > 0)
+    //AppProbeInit();                                                     /* Initialize uC/Probe modules                              */
 //#endif
+
+//	TIMER1_Init();	// Used as Tick for the AcqTask
+	TIMER2_Init();	// Used as Tick for the PWM
+
+	INPUT_CAPTURE_Init();	//Altimètre
+
+	mPORTEOutputConfig(IOPORT_BIT_6);	// Used as CTS for SPI
+
+	init_drone(&drone);
+	
+	SPI_Init();
     
     AppTaskCreate();                                                    /* Create application tasks                                 */
     

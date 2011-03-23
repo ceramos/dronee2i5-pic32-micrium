@@ -27,7 +27,7 @@
 *********************************************************************************************************
 */
 #define ACCEL_RES	14
-#define ACCEL_FS	1000
+#define ACCEL_FS	500
 
 #define ALTIMETER_RES	16
 #define ALTIMETER_FS	25
@@ -46,6 +46,7 @@ typedef void (*TPfct)(void *arg);
 typedef INT16U (*TPfct1)(void);
 typedef void (*TPfct2)(byte);
 typedef void (*TPfct3)(byte, byte);
+typedef short (*TPfct4)(byte);
 
 
 typedef struct{
@@ -84,8 +85,6 @@ typedef enum
 *                                                VARIABLES
 *********************************************************************************************************
 */
-extern OS_FLAG_GRP *flagLeds;
-extern BOOLEAN orangeLedBlinking;
 
 /*
 *********************************************************************************************************

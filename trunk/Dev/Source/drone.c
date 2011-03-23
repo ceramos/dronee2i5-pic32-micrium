@@ -21,6 +21,7 @@
 #include "drone.h"
 
 #include "altimeter.h"
+#include "bma180.h"
 
 
 /*
@@ -49,12 +50,16 @@ TDrone drone;
 void init_drone(TDrone *This)
 {
 	byte i = 0;
+	
+	//Acceleromètre
+	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
+	This->sensor[i++].get_sample = &Accel_getX;
 
 	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
-	This->sensor[i++].get_sample = &ADC_GetVal;
-
+	This->sensor[i++].get_sample = &Accel_getY;
+	
 	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
-	This->sensor[i++].get_sample = &ADC_GetVal;
+	This->sensor[i++].get_sample = &Accel_getZ;
 
 	//Altimètre
 	init_sensor(&This->sensor[i], ALTIMETER_RES, ALTIMETER_FS);
