@@ -29,6 +29,7 @@
 typedef struct{
 	INT16U	value;
 	byte	res;
+	byte    offsetInFrame;
 }TSample;
 
 typedef struct{
@@ -48,6 +49,6 @@ typedef struct{
 *                                            FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
-void init_sensor(TSensor *This, byte resolution, INT16U freq);
+void init_sensor(TSensor *This, byte resolution, INT16U freq, byte offsetInFrame);
 
 #endif	// _SENSOR_H

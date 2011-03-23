@@ -21,6 +21,7 @@
 #include "bma180.h"
 #include <plib.h>
 #include "global.h"
+#include "debug.h"
 /*
 *********************************************************************************************************
 *                                                VARIABLES
@@ -107,7 +108,11 @@ void BMA180_softReset(void)
 */
 short Accel_getX()
 {
-	return Accel_get(ACCELERATION_X);
+	#ifdef DEBUG_ACCELEROMETER_X_DEFAUT_VALUE
+		return DEBUG_ACCELEROMETER_X_DEFAUT_VALUE;
+	#else
+		return Accel_get(ACCELERATION_X);
+	#endif
 //	DBPRINTF("Acceleration X = %d\n", ret);	
 }
 
@@ -118,8 +123,12 @@ short Accel_getX()
  */
 short Accel_getY()
 {
-	return Accel_get(ACCELERATION_Y);
-//	DBPRINTF("Acceleration Y = %d\n", ret);
+	#ifdef DEBUG_ACCELEROMETER_Y_DEFAUT_VALUE
+		return DEBUG_ACCELEROMETER_Y_DEFAUT_VALUE;
+	#else
+		return Accel_get(ACCELERATION_Y);
+	#endif
+	//	DBPRINTF("Acceleration Y = %d\n", ret);
 }
 
 /**
@@ -129,7 +138,11 @@ short Accel_getY()
  */
 short Accel_getZ()
 {
-	return Accel_get(ACCELERATION_Z);
+	#ifdef DEBUG_ACCELEROMETER_Z_DEFAUT_VALUE
+		return DEBUG_ACCELEROMETER_Z_DEFAUT_VALUE;
+	#else
+		return Accel_get(ACCELERATION_Z);
+	#endif
 //	DBPRINTF("Acceleration Z = %d\n\n", ret);
 }
 

@@ -8,14 +8,13 @@
 #include "encoder.h"
 #include "uart_transmit.h"
 
-/*²
+/*
 *********************************************************************************************************
 *                                                VARIABLES
 *********************************************************************************************************
 */
 
 static unsigned char	txferTxBuff[TRANSMIT_BUFFER_SIZE];	// the buffer to store the data to be received
-byte indexUartTransmit = 0;
 
 DmaChannel		dmaTxChn;	// DMA channel to use for our example
 
@@ -57,7 +56,7 @@ void UART_Transmit_InitDma()
 void UART_Transmit_SendFrame()
 {
 	DmaTxferRes  res = DmaChnStartTxfer(dmaTxChn, DMA_WAIT_BLOCK, 1);
-	UART_Transmit_InitialiseFrame();
+//	UART_Transmit_InitialiseFrame();
 //UART_TxByte('4');
 }
 
@@ -70,17 +69,17 @@ void UART_Transmit_SendFrame()
 void UART_Transmit_AddSample(TSample *sample)
 {
 	byte toAdd;
-	byte i;
-	byte resolutionAsByte = sample->res/8 + 1;
+	byte offset = sample->offsetInFrame;
+	byte resolutionAsByte = sample->res%8==0? sample->res/8 : sample->res/8 + 1;
 
 	if(resolutionAsByte == 2)
 	{
 		toAdd = (sample->value & 0xff00) >> 8;
-		txferTxBuff[indexUartTransmit++] = toAdd; 		
+		txferTxBuff[offset++] = toAdd; 		
 	}
 
 	toAdd = sample->value & 0x00ff;
-	txferTxBuff[indexUartTransmit++] = toAdd;
+	txferTxBuff[offset++] = toAdd;
 }
 
 
@@ -91,7 +90,6 @@ void UART_Transmit_AddSample(TSample *sample)
 */
 void UART_Transmit_InitialiseFrame()
 {
-	indexUartTransmit = OFFSET_FIRST_SENSOR;
 	int i = 0;
 	for(i = 0; i<TRANSMIT_BUFFER_SIZE; i++)
 	{

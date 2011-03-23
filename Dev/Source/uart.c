@@ -119,7 +119,10 @@ void  UART_Init (void)
 
     UART_Config(BSP_BAUD_RATE);
     UART_IntEn();
+
+	//Concerne la transmission uart
 	UART_Transmit_InitDma();
+	UART_Transmit_InitialiseFrame();
 }
 
 /**
