@@ -39,8 +39,9 @@
 *                                            FUNCTION
 *********************************************************************************************************
 */
-void init_sensor(TSensor *This, byte resolution, INT16U freq)
+void init_sensor(TSensor *This, byte resolution, INT16U freq, byte offsetInFrame)
 {
 	This->sample.res = resolution;
+	This->sample.offsetInFrame = offsetInFrame;
 	This->fs = freq;
 }

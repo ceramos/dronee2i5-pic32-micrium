@@ -52,17 +52,17 @@ void init_drone(TDrone *This)
 	byte i = 0;
 	
 	//Acceleromètre
-	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
+	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS, OFFSET_ACCEL_X);
 	This->sensor[i++].get_sample = &Accel_getX;
 
-	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
+	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS, OFFSET_ACCEL_Y);
 	This->sensor[i++].get_sample = &Accel_getY;
 	
-	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS);
+	init_sensor(&This->sensor[i], ACCEL_RES, ACCEL_FS, OFFSET_ACCEL_Z);
 	This->sensor[i++].get_sample = &Accel_getZ;
 
 	//Altimètre
-	init_sensor(&This->sensor[i], ALTIMETER_RES, ALTIMETER_FS);
+	init_sensor(&This->sensor[i], ALTIMETER_RES, ALTIMETER_FS, OFFSET_ALTIMETER);
 	This->sensor[i++].get_sample = &getAltitudeAsCentiMeter;
 	
 

@@ -85,13 +85,17 @@ static void AppTaskAcq(void *p_arg)
 	TAcq *This = &drone.acq;
 	TSample  sample;
     TSensor* psensor;
-    
+
+	//boolean définissant si l'on doit envoyer ou non la trame à cet instant
+	BOOLEAN mustSendFrame = OS_FALSE;    
+
 	TIMER1_Init();	// Use as Tick for the AcqTask
 	
 	while(1)
 	{
 		mPORTEToggleBits(IOPORT_BIT_6);
 
+		mustSendFrame = OS_FALSE;
 		OSFlagPend(This->start_acq, (1 << 10), OS_FLAG_WAIT_SET_ALL + OS_FLAG_CONSUME, 0, &err);	// Wait for the TIMER1 Tick		
 		if(err == OS_NO_ERR)
 		{
@@ -102,15 +106,27 @@ static void AppTaskAcq(void *p_arg)
 				ratio = This->enc.fsmax / drone.sensor[i].fs;
 				if((This->enc.AcqSeq % ratio) == 0)		// Does the sensor have to sampling?
 				{
+					//On envoie la trame si le capteur courant est le capteur ayant la plus faible fréquence d'échantillonage
+					//Ainsi la trame contient toujours les infos de tous les capteurs
+					if(This->enc.fsmin == drone.sensor[i].fs)
+					{
+						mustSendFrame = OS_TRUE;
+					}				
+
+					// Retrieve informations from sensor
 					sample.res = drone.sensor[i].sample.res;
-					sample.value = drone.sensor[i].get_sample();	// Get the sample
-					
+					sample.offsetInFrame = drone.sensor[i].sample.offsetInFrame;
+					sample.value = drone.sensor[i].get_sample();
+
 					//copy into a frame
 					UART_Transmit_AddSample(&sample);
 				}
 			}
 			//sends the frame
-			UART_Transmit_SendFrame();
+			if(mustSendFrame == OS_TRUE)
+			{
+				UART_Transmit_SendFrame();
+			}
 		}
 	}
 }
