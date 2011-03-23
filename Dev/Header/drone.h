@@ -38,7 +38,7 @@
 *                                                DEFINES
 *********************************************************************************************************
 */
-#define NB_SENSOR	3
+#define NB_SENSOR	4
 #define NB_MOTOR	4
 typedef struct{
 	TAcq 	acq;

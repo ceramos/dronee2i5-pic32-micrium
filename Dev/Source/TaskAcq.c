@@ -85,15 +85,8 @@ static void AppTaskAcq(void *p_arg)
 	TSample  sample;
     TSensor* psensor;
     
-
 	TIMER1_Init();	// Use as Tick for the AcqTask
-	TIMER2_Init();	// Use as Tick for the PWM
 
-	INPUT_CAPTURE_Init();	//Altimètre
-
-	mPORTEOutputConfig(IOPORT_BIT_6);
-
-	init_drone(&drone);
 	while(1)
 	{
 		mPORTEToggleBits(IOPORT_BIT_6);

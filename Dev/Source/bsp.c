@@ -43,8 +43,7 @@
 *                                               EXTERNES
 *********************************************************************************************************
 */
-//extern OS_FLAG_GRP *flagLeds;
-//extern BOOLEAN orangeLedBlinking;
+
 
 /*
 *********************************************************************************************************
@@ -337,18 +336,10 @@ void  TIMER1_Init (void)
 	mPORTDSetPinsDigitalOut(IOPORT_BIT_3);
 	mPORTDClearBits(IOPORT_BIT_3);
 	// STEP 2. configure Timer 1 using internal clock, 1:256 prescale
- //   OpenTimer1(T1_ON | T1_SOURCE_INT | T1_PS_1_256, 65000);
    OpenTimer1(T1_ON | T1_SOURCE_INT | T1_PS_1_256, 282);
 
     // set up the timer interrupt with a priority of 2
-    ConfigIntTimer1(T1_INT_ON | T1_INT_PRIOR_2);
-		// configure PORTD.RD3 = output
-    
-    
-//ADC_Config();                                                       /* Configure ADC settings                           */
-  //  ADC_IntInit();                                                      /* Configure the interrupt settings                 */
-    //ADC_TmrInit();                                                      /* Initialize the timer used for the ADC            */
-    //EnableADC10();                                                      /* Enable the ADC                                   */
+    ConfigIntTimer1(T1_INT_ON | T1_INT_PRIOR_2);                                
 }
 
 /*
@@ -621,15 +612,11 @@ void  BSP_CNHandler (void)
     
     if ((reg_val & PB0_MASK) == 0)
 	{          
-			INT8U err;
-			OSFlagPost(flagLeds, (1 << 10), OS_FLAG_SET, &err);                                                             /* Insert your application code here                        */                                                                  /* Insert your application code here                        */
+                                                             /* Insert your application code here                        */                                                                  /* Insert your application code here                        */
     } 
 	else if((reg_val & PB1_MASK) == 0)
 	{
-		if(orangeLedBlinking == OS_TRUE)
-			orangeLedBlinking = OS_FALSE;
-		else
-			orangeLedBlinking = OS_TRUE;
+		
 	}
     
     mCNClearIntFlag();
