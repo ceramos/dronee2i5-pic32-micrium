@@ -65,7 +65,7 @@ typedef enum
 	OFFSET_MOTEUR_2,
 	OFFSET_MOTEUR_3,
 	OFFSET_MOTEUR_4,
-	OFFSET_CHECK_VALID,
+	OFFSET_RX_CHECK_VALID,
 	UART_RX_FRAME_SIZE
 }TOffsetUartRxFrame;
 
@@ -78,7 +78,27 @@ typedef enum
 	UART_RX_FRAME_CHECK_VALID = (UART_RX_FRAME_DATA_SIZE ^ 0xFF)
 }TUartRxFrameConst;
 
+//Trame émission: : [ID(OxAA)]_[TAILLE_DATA(4)]_[MOTEUR_X(0-100)]_[TAILLE^^OxFF]
+typedef enum
+{
+	UART_TX_FRAME_ID = 0x88,
+	UART_TX_FRAME_DATA_SIZE = 10,
+	UART_TX_FRAME_CHECK_VALID = (UART_TX_FRAME_DATA_SIZE ^ 0xFF)
+}TUartTxFrameConst;
+
+
+typedef enum
+{
+	OFFSET_FIRST_SENSOR = 2,
+	OFFSET_TX_CHECK_VALID = UART_TX_FRAME_DATA_SIZE + 2,
+	UART_TX_FRAME_SIZE
+}TOffsetUartTxFrame;
+
 #define VITESSE_MAX_MOTEURS 100
+
+#define RESOLUTION_1_BYTE  = 8;
+#define RESOLUTION_2_BYTE  = RESOLUTION_1_BYTE * 2;
+#define RESOLUTION_3_BYTE  = RESOLUTION_1_BYTE * 3;
 
 /*
 *********************************************************************************************************

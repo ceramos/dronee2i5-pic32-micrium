@@ -4,6 +4,7 @@
 *********************************************************************************************************
 */
 #include "uart_header.h"
+#include "uart_transmit.h"
 #include "uart.h"
 #include "global.h"
 
@@ -118,6 +119,7 @@ void  UART_Init (void)
 
     UART_Config(BSP_BAUD_RATE);
     UART_IntEn();
+	UART_Transmit_InitDma();
 }
 
 /**

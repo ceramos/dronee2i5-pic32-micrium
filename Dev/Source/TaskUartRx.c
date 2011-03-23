@@ -224,7 +224,7 @@ static void analyseFrame()
 		(vitesseMoteur2 <= VITESSE_MAX_MOTEURS)							&&
 		(vitesseMoteur3 <= VITESSE_MAX_MOTEURS)							&&
 		(vitesseMoteur4 <= VITESSE_MAX_MOTEURS)							&&
-		(Trame_Recue_Uart[OFFSET_CHECK_VALID] == UART_RX_FRAME_CHECK_VALID) )
+		(Trame_Recue_Uart[OFFSET_RX_CHECK_VALID] == UART_RX_FRAME_CHECK_VALID) )
 	{
 		//La trame est bien valide, on assigne aux moteurs la valeur désirée
 		drone.motor[MOTOR1-1].set_speed(MOTOR1, vitesseMoteur1);
