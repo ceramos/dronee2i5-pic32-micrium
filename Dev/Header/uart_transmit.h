@@ -1,5 +1,5 @@
-#ifndef _ALTIMETER_H
-#define _ALTIMETER_H
+#ifndef _UART_TRANSMIT_HEADER_H
+#define _UART_TRANSMIT_HEADER_H
 
 
 /*
@@ -7,30 +7,23 @@
 *                                                INCLUDES
 *********************************************************************************************************
 */
-
-#include "bsp_peripherals.h"
-#include "bsp.h"
-
-
+#include "sensor.h"
 
 /*
 *********************************************************************************************************
 *                                                DEFINES
 *********************************************************************************************************
 */
-
-#define SECOND_PER_TIMER3_TICK 		(((1.0/BSP_CLK_FREQ) * PRESCALER_TIMER_3))
-#define MICROSECOND_PER_TIMER3_TICK (1000000*SECOND_PER_TIMER3_TICK)
-
-
-
+#define TRANSMIT_BUFFER_SIZE (UART_TX_FRAME_DATA_SIZE + 3)
 /*
 *********************************************************************************************************
 *                                            FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
-short getAltitudeAsCentiMeter();
-CPU_INT16U getAltitudeAsInch();
-CPU_INT16U getHighStateTime();
+void UART_Transmit_InitDma(void);
+void UART_Transmit_SendFrame(void);
+void UART_Transmit_AddSample(TSample* sample);
+void UART_Transmit_InitialiseFrame();
 
-#endif /*_ALTIMETER_H */
+
+#endif /*_UART_TRANSMIT_HEADER_H */

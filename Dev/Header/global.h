@@ -43,7 +43,7 @@
 typedef INT8U byte;
 
 typedef void (*TPfct)(void *arg);
-typedef INT16U (*TPfct1)(void);
+typedef short (*TPfct1)(void);
 typedef void (*TPfct2)(byte);
 typedef void (*TPfct3)(byte, byte);
 typedef short (*TPfct4)(byte);

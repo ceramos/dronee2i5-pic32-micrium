@@ -37,7 +37,7 @@ CPU_INT16U getAltitudeAsInch()
 	return (((float)getHighStateTime()) / ALTIMETER_MICROSECOND_PER_INCH);
 }
 
-CPU_INT16U getAltitudeAsCentiMeter()
+short getAltitudeAsCentiMeter()
 {
 	CPU_INT16U altitude;
 
