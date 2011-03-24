@@ -93,17 +93,20 @@ static void AppTaskAcq(void *p_arg)
 	
 	while(1)
 	{
-		mPORTEToggleBits(IOPORT_BIT_6);
-
+		
 		mustSendFrame = OS_FALSE;
+
+		mPORTEClearBits(IOPORT_BIT_6);
 		OSFlagPend(This->start_acq, (1 << 10), OS_FLAG_WAIT_SET_ALL + OS_FLAG_CONSUME, 0, &err);	// Wait for the TIMER1 Tick		
+		mPORTESetBits(IOPORT_BIT_6);
+		
 		if(err == OS_NO_ERR)
 		{
 			//--- Here we can start the acquisition
 			This->enc.AcqSeq++;
 			for(i = 0; i < NB_SENSOR; i++)			// Each of the sensor
 			{
-				ratio = This->enc.fsmax / drone.sensor[i].fs;
+				ratio = ACQUISITION_TASK_FREQUENCY / drone.sensor[i].fs;
 				if((This->enc.AcqSeq % ratio) == 0)		// Does the sensor have to sampling?
 				{
 					//On envoie la trame si le capteur courant est le capteur ayant la plus faible fréquence d'échantillonage
