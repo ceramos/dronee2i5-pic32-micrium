@@ -26,6 +26,9 @@
 *                                                DEFINE
 *********************************************************************************************************
 */
+//fréquence de la tâche d'acquisition
+#define ACQUISITION_TASK_FREQUENCY ACCEL_FS
+
 #define ACCEL_RES	14
 #define ACCEL_RES_BYTE	     (ACCEL_RES%8==0? ACCEL_RES/8: 1 + ACCEL_RES/8)	
 #define ACCEL_FS	500
@@ -43,9 +46,6 @@
 //Concernant l'altimètre
 #define ALTIMETER_MICROSECOND_PER_INCH 147
 #define CM_PER_INCH 2.54
-
-//Concernant l'UART
-#define UART_TRANSMIT_TRAME_SIZE 19
 
 
 typedef INT8U byte;

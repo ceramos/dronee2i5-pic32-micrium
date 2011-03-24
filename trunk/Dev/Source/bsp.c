@@ -333,10 +333,11 @@ void  BSP_TIMER1Handler (void)
 
 void  TIMER1_Init (void)
 {
+	unsigned int valeurTimer = (BSP_CLK_FREQ/(256*ACQUISITION_TASK_FREQUENCY));
 	mPORTDSetPinsDigitalOut(IOPORT_BIT_3);
 	mPORTDClearBits(IOPORT_BIT_3);
 	// STEP 2. configure Timer 1 using internal clock, 1:256 prescale
-   OpenTimer1(T1_ON | T1_SOURCE_INT | T1_PS_1_256, 282);
+   OpenTimer1(T1_ON | T1_SOURCE_INT | T1_PS_1_256, valeurTimer );
 
     // set up the timer interrupt with a priority of 2
     ConfigIntTimer1(T1_INT_ON | T1_INT_PRIOR_2);                                
