@@ -482,15 +482,36 @@ void  BSP_ADCHandler (void)
 *********************************************************************************************************
 */
 
-CPU_INT16U  ADC_GetVal (void)
+short  ADC_GetVal (void)
 {
     CPU_INT08U  buffer;
-    
+    short value;
     
     buffer = 8 * (~ReadActiveBufferADC10() & 0x1);                      /* Select non active buffer                                 */
     
-    return (ReadADC10(buffer));                                         /* Return ADC reading                                       */
+    value = (short)(ReadADC10(buffer));                                         /* Return ADC reading                                       */
+	
+	return value;
 }
+
+
+/*
+*********************************************************************************************************
+*                                     ADC_GetVal()
+*
+* Description: This function returns the battery voltage (ADC on 8 bits)
+*
+* Arguments  : None
+*
+* Returns    : None
+*********************************************************************************************************
+*/
+short Battery_getVoltage (void)
+{
+    return ADC_GetVal() << 2;
+}
+
+
 
 /*
 *********************************************************************************************************

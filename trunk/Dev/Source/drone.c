@@ -65,6 +65,10 @@ void init_drone(TDrone *This)
 	init_sensor(&This->sensor[i], ALTIMETER_RES, ALTIMETER_FS, OFFSET_ALTIMETER);
 	This->sensor[i++].get_sample = &getAltitudeAsCentiMeter;
 	
+	//Batteri
+	init_sensor(&This->sensor[i], BATTERY_RES, BATTERY_FS, OFFSET_BATTERY);
+	This->sensor[i++].get_sample = &Battery_getVoltage;
+	
 
 	init_enc(&This->acq.enc, This->sensor);
 	for(i=0; i<4; i++)

@@ -59,7 +59,8 @@ void        BSP_IntDisableALL   (void);
 
 void        BSP_Dly             (CPU_INT32U  us);
 
-CPU_INT16U  ADC_GetVal          (void);
+short  		ADC_GetVal          (void);
+short  		Battery_getVoltage	(void);
 
 void  TIMER1_Init (INT16U frequence);
 void  TIMER2_Init (void);
