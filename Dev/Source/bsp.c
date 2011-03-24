@@ -325,15 +325,15 @@ void  BSP_TIMER1Handler (void)
 *
 * Description: This function performs the initialization for the TIMER1.
 *
-* Arguments  : None
+* Arguments  : frequence
 *
 * Returns    : None
 *********************************************************************************************************
 */
 
-void  TIMER1_Init (void)
+void  TIMER1_Init (INT16U frequence)
 {
-	unsigned int valeurTimer = (BSP_CLK_FREQ/(256*ACQUISITION_TASK_FREQUENCY));
+	unsigned int valeurTimer = BSP_CLK_FREQ/(256*frequence);
 	mPORTDSetPinsDigitalOut(IOPORT_BIT_3);
 	mPORTDClearBits(IOPORT_BIT_3);
 	// STEP 2. configure Timer 1 using internal clock, 1:256 prescale

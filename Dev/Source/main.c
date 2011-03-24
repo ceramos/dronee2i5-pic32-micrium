@@ -113,7 +113,6 @@ static  void  AppTaskStart (void *p_arg)
     //AppProbeInit();                                                     /* Initialize uC/Probe modules                              */
 //#endif
 
-//	TIMER1_Init();	// Used as Tick for the AcqTask
 	TIMER2_Init();	// Used as Tick for the PWM
 
 	INPUT_CAPTURE_Init();	//Altimètre

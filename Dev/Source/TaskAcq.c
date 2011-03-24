@@ -89,7 +89,7 @@ static void AppTaskAcq(void *p_arg)
 	//boolean définissant si l'on doit envoyer ou non la trame à cet instant
 	BOOLEAN mustSendFrame = OS_FALSE;    
 
-	TIMER1_Init();	// Use as Tick for the AcqTask
+	TIMER1_Init(This->enc.fsmax);	// Use as Tick for the AcqTask
 	
 	while(1)
 	{
@@ -106,7 +106,7 @@ static void AppTaskAcq(void *p_arg)
 			This->enc.AcqSeq++;
 			for(i = 0; i < NB_SENSOR; i++)			// Each of the sensor
 			{
-				ratio = ACQUISITION_TASK_FREQUENCY / drone.sensor[i].fs;
+				ratio = This->enc.fsmax / drone.sensor[i].fs;
 				if((This->enc.AcqSeq % ratio) == 0)		// Does the sensor have to sampling?
 				{
 					//On envoie la trame si le capteur courant est le capteur ayant la plus faible fréquence d'échantillonage

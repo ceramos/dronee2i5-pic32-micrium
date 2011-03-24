@@ -61,6 +61,6 @@ void        BSP_Dly             (CPU_INT32U  us);
 
 CPU_INT16U  ADC_GetVal          (void);
 
-void  TIMER1_Init (void);
+void  TIMER1_Init (INT16U frequence);
 void  TIMER2_Init (void);
 #endif 	// _BSP_H_

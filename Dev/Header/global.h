@@ -26,9 +26,6 @@
 *                                                DEFINE
 *********************************************************************************************************
 */
-//fréquence de la tâche d'acquisition
-#define ACQUISITION_TASK_FREQUENCY ACCEL_FS
-
 #define ACCEL_RES	14
 #define ACCEL_RES_BYTE	     (ACCEL_RES%8==0? ACCEL_RES/8: 1 + ACCEL_RES/8)	
 #define ACCEL_FS	500
