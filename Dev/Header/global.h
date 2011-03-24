@@ -39,6 +39,7 @@
 
 #define BATTERY_RES  8
 #define BATTERY_RES_BYTE		(BATTERY_RES%8==0? BATTERY_RES/8: 1 + BATTERY_RES/8)
+#define BATTERY_FS  25
 
 //Concernant l'altimètre
 #define ALTIMETER_MICROSECOND_PER_INCH 147
