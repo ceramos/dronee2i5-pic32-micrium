@@ -14,7 +14,8 @@
 #ifndef		_BSP_H_
 #define 	_BSP_H_
 #include "bsp_peripherals.h"
-
+#include "cpu.h"
+#include "os_cpu.h"
 /*
 *********************************************************************************************************
 *                                                DEFINES

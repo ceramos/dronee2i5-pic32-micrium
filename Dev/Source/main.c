@@ -13,7 +13,8 @@
 *********************************************************************************************************
 */
 
-#include <includes.h>
+#include <p32xxxx.h>
+#include "ports.h"
 #include <TaskAcq.h>
 #include <TaskUartRx.h>
 #include <drone.h>

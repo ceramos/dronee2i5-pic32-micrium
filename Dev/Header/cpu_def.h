@@ -58,7 +58,8 @@
 *                                                                         octet @ lowest memory address)
 *********************************************************************************************************
 */
-
+#ifndef _CPU_DEF_H_
+#define _CPU_DEF_H_
                                                         /* ----------------------- CPU WORD SIZE ---------------------- */
 #define  CPU_WORD_SIZE_08                          1    /*  8-bit word size = sizeof(CPU_INT08x).                       */
 #define  CPU_WORD_SIZE_16                          2    /* 16-bit word size = sizeof(CPU_INT16x).                       */
@@ -131,3 +132,5 @@
 #define  CPU_CRITICAL_METHOD_STATUS_STK            2    /* Push/Pop     int status onto stk.                            */
 #define  CPU_CRITICAL_METHOD_STATUS_LOCAL          3    /* Save/Restore int status to local var.                        */
 
+
+#endif //_CPU_DEF_H_

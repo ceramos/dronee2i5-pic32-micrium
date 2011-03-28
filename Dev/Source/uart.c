@@ -7,8 +7,8 @@
 #include "uart_transmit.h"
 #include "uart.h"
 #include "global.h"
-
-
+#include "bsp.h"
+#include "ports.h"
 /*
 *********************************************************************************************************
 *                                                VARIABLES

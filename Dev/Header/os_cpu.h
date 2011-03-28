@@ -1,3 +1,5 @@
+#ifndef __OS_CPU_H
+#define __OS_CPU_H
 /*
 *********************************************************************************************************
 *                                               uC/OS-II
@@ -94,5 +96,4 @@ void       CoreTimerIntHandler(void);
 OS_CPU_SR  OS_CPU_SR_Save(void);               /* See os_cpu_a.s                                       */
 void       OS_CPU_SR_Restore(OS_CPU_SR);       /* See os_cpu_a.s                                       */
 
-
-
+#endif //__OS_CPU_H
