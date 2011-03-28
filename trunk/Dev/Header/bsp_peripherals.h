@@ -11,6 +11,8 @@
 *                                              Explorer 16
 *********************************************************************************************************
 */
+#ifndef _BSP_PERIPHERALS_H
+#define _BSP_PERIPHERALS_H
 
 #include  <app_cfg.h>
 #include  <mini_libdef.h>
@@ -46,3 +48,5 @@
 #define  BSP_UART       BSP_UART2
 #endif
 
+
+#endif

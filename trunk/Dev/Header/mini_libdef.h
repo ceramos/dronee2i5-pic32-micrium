@@ -25,9 +25,13 @@
 *                                          STANDARD DEFINES
 *********************************************************************************************************
 */
+#ifndef _MINI_LIBDEF_H
+#define _MINI_LIBDEF_H
 
 #define  DEF_DISABLED                                      0
 #define  DEF_ENABLED                                       1
 
 #define  DEF_FALSE                                         0
 #define  DEF_TRUE                                          1
+
+#endif //_MINI_LIBDEF_H

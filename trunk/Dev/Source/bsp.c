@@ -12,8 +12,10 @@
 *********************************************************************************************************
 */
 
-#include "includes.h"
+#include "bsp.h"
 #include "osc.h"
+#include "ports.h"
+#include "CoreTimer.h"
 #include "system.h"
 #include "timer.h"
 #include "uart.h"

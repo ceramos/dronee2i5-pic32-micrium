@@ -17,7 +17,8 @@
 *                                                INCLUDES
 *********************************************************************************************************
 */
-#include <includes.h>
+#include <p32xxxx.h>
+#include "ports.h"
 #include "TaskAcq.h"
 #include "global.h"
 #include "encoder.h"
