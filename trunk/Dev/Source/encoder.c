@@ -46,12 +46,21 @@ void init_enc(TEncoder *This, TSensor *sensor)
 		if(sensor[i].fs > This->fsmax)
 			This->fsmax = sensor[i].fs;
 		This->AcqSeqCount = This->fsmax/This->fsmin;
-	}
+	} 
 }
 
 
 void compact(TSample *sample, TFrame *frame)
 {
+	if(sample->res <= 8)
+	{
+		frame->data[frame->idx++] = 	sample->value & 0x00FF;
+	}
+	else
+	{
+		frame->data[frame->idx++] = 	(sample->value & 0xff00) >> 8;
+		frame->data[frame->idx++] = 	sample->value & 0x00FF;
+	}
 }
 
 /*

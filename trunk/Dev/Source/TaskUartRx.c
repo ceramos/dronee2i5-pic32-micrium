@@ -114,7 +114,7 @@ static void AppTaskUartRx(void *p_arg)
 
 	while(1)
 	{
-		OSTimeDlyHMSM(0, 0, 2, 0);
+		OSTimeDlyHMSM(0, 0, 0, 25);
 		mPORTEToggleBits(IOPORT_BIT_7);
 
 		nombreOctetsRecus = 0;

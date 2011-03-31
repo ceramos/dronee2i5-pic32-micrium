@@ -172,7 +172,7 @@ short Accel_get(TAxe axe)
 			txDataMsb=ACCZMSB_ADDR;
 			break;
 		default:
-			DBPRINTF("No data to received \n");
+			//DBPRINTF("No data to received \n");
 		return;
 	}	
 	rx_lsb = SPI_read(txDataLsb);

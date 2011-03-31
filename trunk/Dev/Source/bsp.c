@@ -302,7 +302,7 @@ INT32U  OSProbe_TmrRd (void)
 *********************************************************************************************************
 *                                    BSP_TIMER1Handler()
 *
-* Description: This function handles interrupts from the UART.
+* Description: This function handles interrupts from the timer 1.
 *
 * Arguments  : None
 *
@@ -510,7 +510,7 @@ short  ADC_GetVal (void)
 */
 short Battery_getVoltage (void)
 {
-    return ADC_GetVal() << 2;
+    return ADC_GetVal() >> 2;
 }
 
 

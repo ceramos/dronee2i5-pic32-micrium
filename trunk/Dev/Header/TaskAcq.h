@@ -33,7 +33,7 @@ typedef struct{
 	TPfct routine;
 	OS_FLAG_GRP* start_acq;
 	TEncoder enc;
-	TFrame trame;
+	TFrame myframe;
 }TAcq;
 
 /*

@@ -123,6 +123,8 @@ static  void  AppTaskStart (void *p_arg)
 	init_drone(&drone);
 	
 	SPI_Init();
+	
+	Gyro_Init();
     
     AppTaskCreate();                                                    /* Create application tasks                                 */
     
