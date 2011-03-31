@@ -23,6 +23,9 @@
 */
 
 #define  BSP_CLK_FREQ               72000000
+#define GetSystemClock()            (BSP_CLK_FREQ)
+#define GetPeripheralClock()        (BSP_CLK_FREQ/2)
+#define GetInstructionClock()       (BSP_CLK_FREQ)
 //#define  JTAG_ENABLE                DEF_DISABLED
 #define  JTAG_ENABLE                DEF_ENABLED
 	

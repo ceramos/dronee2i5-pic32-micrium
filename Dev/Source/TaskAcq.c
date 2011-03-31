@@ -33,6 +33,7 @@
 *********************************************************************************************************
 */
 OS_STK       AppTaskAcqStk[APP_TASK_ACQ_STK_SIZE];
+byte mysamplebuff[500];
 
 /*
 *********************************************************************************************************
@@ -52,6 +53,8 @@ void create_acqtask(void)
 	
 	drone.acq.routine = AppTaskAcq;
 	drone.acq.start_acq = OSFlagCreate(0x0000, &err);
+	drone.acq.myframe.data = mysamplebuff;
+	drone.acq.myframe.idx = 0;
 	if(err != OS_NO_ERR)
 	{
 		//Erreur lors de la création de la tâche
@@ -121,16 +124,29 @@ static void AppTaskAcq(void *p_arg)
 					sample.res = drone.sensor[i].sample.res;
 					sample.offsetInFrame = drone.sensor[i].sample.offsetInFrame;
 					sample.value = drone.sensor[i].get_sample();
-
+					
 					//copy into a frame
-					UART_Transmit_AddSample(&sample);
+					compact(&sample, &This->myframe);
+					//UART_Transmit_AddSample(&sample);
 				}
 			}
+			//---------------------------------------------------//
+			if(This->enc.AcqSeqCount == This->enc.AcqSeq )
+	        {	
+	         //length
+	         	byte payload_length = This->myframe.idx;// - 2 pour AcqSeqCount
+				//This->myframe.data[6] = HI_UINT16(payload_length);
+				//This->myframe.data[7] = LO_UINT16(payload_length);
+				UART_Transmit_SendFrame(This->myframe.data, payload_length);
+				//acq->start_send(acq->mkf.data+5, acq->mkf.i-5 );
+				This->enc.AcqSeq = 0;
+				This->myframe.idx = 0;
+			}
 			//sends the frame
-			if(mustSendFrame == OS_TRUE)
+		/*	if(mustSendFrame == OS_TRUE)
 			{
 				UART_Transmit_SendFrame();
-			}
+			}*/
 		}
 	}
 }

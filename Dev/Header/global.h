@@ -26,16 +26,23 @@
 *                                                DEFINE
 *********************************************************************************************************
 */
+#define BUILD_UINT16(hiByte, loByte) \
+          ((uint16)(((loByte) & 0x00FF) + (((hiByte) & 0x00FF) << 8)))
+
+#define HI_UINT16(a) (((a) >> 8) & 0xFF)
+#define LO_UINT16(a) ((a) & 0xFF)
+
 #define ACCEL_RES	14
 #define ACCEL_RES_BYTE	     (ACCEL_RES%8==0? ACCEL_RES/8: 1 + ACCEL_RES/8)	
 #define ACCEL_FS	500
 
+#define GYRO_RES	16
+#define GYRO_RES_BYTE	     (ACCEL_RES%8==0? ACCEL_RES/8: 1 + ACCEL_RES/8)	
+#define GYRO_FS		500
+
 #define ALTIMETER_RES	8
 #define ALTIMETER_RES_BYTE	(ALTIMETER_RES%8==0? ALTIMETER_RES/8: 1 + ALTIMETER_RES/8)
 #define ALTIMETER_FS	25
-
-#define GYRO_RES	16
-#define GYRO_RES_BYTE		(GYRO_RES%8==0? GYRO_RES/8: 1 + GYRO_RES/8)
 
 #define BATTERY_RES  8
 #define BATTERY_RES_BYTE		(BATTERY_RES%8==0? BATTERY_RES/8: 1 + BATTERY_RES/8)
@@ -54,12 +61,13 @@ typedef void (*TPfct2)(byte);
 typedef void (*TPfct3)(byte, byte);
 typedef short (*TPfct4)(byte);
 
-
+#define FRAME_HEADER_SIZE	2
 typedef struct{
 	byte	sof;
 	byte	size;
 	byte* data;
 	byte eof;
+	byte    idx;
 }TFrame; 
 
 

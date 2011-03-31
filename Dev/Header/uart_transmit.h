@@ -14,14 +14,14 @@
 *                                                DEFINES
 *********************************************************************************************************
 */
-#define TRANSMIT_BUFFER_SIZE (UART_TX_FRAME_SIZE)
+#define TRANSMIT_BUFFER_SIZE	500//(UART_TX_FRAME_SIZE)
 /*
 *********************************************************************************************************
 *                                            FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
 void UART_Transmit_InitDma(void);
-void UART_Transmit_SendFrame(void);
+void UART_Transmit_SendFrame(byte *datatosend, byte size);
 void UART_Transmit_AddSample(TSample* sample);
 void UART_Transmit_InitialiseFrame();
 
